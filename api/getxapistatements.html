@@ -17,7 +17,7 @@
 
         const parameters = ADL.XAPIWrapper.searchParams();
         parameters["agent"] = '{"mbox": "mailto:jdg@example.com"}';
-        parameters["verb"] = "http://adlnet.gov/expapi/verbs/answered";
+        //parameters["verb"] = "http://adlnet.gov/expapi/verbs/answered";
         const queryData = ADL.XAPIWrapper.getStatements(parameters);
         const console = document.getElementById("console");
         console.innerHTML = queryData;
