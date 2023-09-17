@@ -43,6 +43,8 @@
                     success_array.push(thisSuccess);
                 }
             }
+            // reverse the array so first item is the oldest and last is from the newest xAPI event
+            success_array = success_array.reverse();
             return success_array;
         }
     </script>
