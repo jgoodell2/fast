@@ -34,7 +34,7 @@
             let success_array = [];
             if (statements_array) {
                 for (i=0; i<statements_array.length; i++) {
-                    const thisSuccess = statements_array.result.success;
+                    const thisSuccess = statements_array[i].result.success;
                     success_array.push(thisSuccess);
                 }
             }
