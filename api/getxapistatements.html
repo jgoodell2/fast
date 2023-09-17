@@ -28,6 +28,11 @@
             console.innerHTML = JSON.stringify(queryData);
         }
 
+        function display_success_array() {
+            const console = document.getElementById("console");
+            console.innerHTML = get_success_array();
+        }
+        
         function get_success_array() {
             statements_object = get_statements();
             statements_array = statements_object.statements;
@@ -45,7 +50,7 @@
   
 <body>
     <!-- Button press should get xAPI statements -->
-    <button type="button" name="true" onclick="get_success_array()">Get Statements</button>
+    <button type="button" name="true" onclick="display_success_array()">Get Statements</button>
     <div id="console"></div>
 </body>
 </html>
