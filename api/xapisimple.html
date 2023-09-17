@@ -12,7 +12,7 @@
     function send_statement(buttonName){
         var conf = {
              "endpoint" : "https://lrs.adlnet.gov/xapi/",
-             "auth" : "Basic " + btoa("xapi-tools:xapi-tools")
+             "auth" : "Basic " + toBase64("xapi-tools:xapi-tools")
              };
         ADL.XAPIWrapper.changeConfig(conf);
  
