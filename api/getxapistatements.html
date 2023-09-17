@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head><meta charset="UTF-8">
+   <!-- Get reusable scripts that hide the complexity -->
+   <script type="text/javascript" src="./js/cryptojs_v3.1.2.js"></script>
+    <script type="text/javascript" src="./js/xAPIWrapper.js"></script>
+    <!------------------------------------->
+    
+   <!-- The following script handles the local details to send the xAPI Statement -->
+    <script>
+    function get_statements(){
+        var conf = {
+             "endpoint" : "https://lrs.adlnet.gov/xapi/",
+             "auth" : "Basic " + toBase64("xapi-tools:xapi-tools")
+             };
+        ADL.XAPIWrapper.changeConfig(conf);
+
+        const parameters = ADL.XAPIWrapper.searchParams();
+        parameters["agent"] = '{"mbox": "mailto:jdg@example.com"}';
+        parameters["verb"] = "http://adlnet.gov/expapi/verbs/answered";
+        const queryData = ADL.XAPIWrapper.getStatements(parameters);
+        const console = document.getElementById("console");
+        console.innerHTML = queryData;
+    }
+    </script>
+</head>
+  
+<body>
+    <!-- Button press should get xAPI statements -->
+    <button type="button" name="true" onclick="get_statements()">Get Statements</button>
+    <div id="console"></div>
+</body>
+</html>
