@@ -8,26 +8,44 @@
     
    <!-- The following script handles the local details to send the xAPI Statement -->
     <script>
-    function get_statements(){
-        var conf = {
-             "endpoint" : "https://lrs.adlnet.gov/xapi/",
-             "auth" : "Basic " + toBase64("xapi-tools:xapi-tools")
-             };
-        ADL.XAPIWrapper.changeConfig(conf);
+        function get_statements(){
+            var conf = {
+                 "endpoint" : "https://lrs.adlnet.gov/xapi/",
+                 "auth" : "Basic " + toBase64("xapi-tools:xapi-tools")
+                 };
+            ADL.XAPIWrapper.changeConfig(conf);
+    
+            const parameters = ADL.XAPIWrapper.searchParams();
+            parameters["agent"] = '{"mbox": "mailto:jdg@example.com"}';
+            //parameters["verb"] = "http://adlnet.gov/expapi/verbs/answered";
+            const queryData = ADL.XAPIWrapper.getStatements(parameters);
+            const console = document.getElementById("console");
+            return = queryData;
+        }
 
-        const parameters = ADL.XAPIWrapper.searchParams();
-        parameters["agent"] = '{"mbox": "mailto:jdg@example.com"}';
-        //parameters["verb"] = "http://adlnet.gov/expapi/verbs/answered";
-        const queryData = ADL.XAPIWrapper.getStatements(parameters);
-        const console = document.getElementById("console");
-        console.innerHTML = queryData;
-    }
+        function display_statements() {
+            const console = document.getElementById("console");
+            console.innerHTML = JSON.stringify(queryData);
+        }
+
+        function get_success_array {
+            statements_object = get_statements();
+            statements_array = statements_object.statements;
+            let success_array = [];
+            if (statements_array) {
+                for (i=0; i<statements.length; i++) {
+                    const thisSuccess = statements.result.success;
+                    success_array.push(thisSuccess);
+                }
+            }
+            return success_array;
+        }
     </script>
 </head>
   
 <body>
     <!-- Button press should get xAPI statements -->
-    <button type="button" name="true" onclick="get_statements()">Get Statements</button>
+    <button type="button" name="true" onclick="get_success_array()">Get Statements</button>
     <div id="console"></div>
 </body>
 </html>
