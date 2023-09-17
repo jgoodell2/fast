@@ -21,7 +21,7 @@
         var actorMail = "mailto:jdg@example.com";
         var verbId = "http://example.com/xapi/answered";
         var verbDisplay =  "answered";
-        var objectId = "https://jgoodell2.github.io/itemGen/xapisimple.html";
+        var objectId = "https://jgoodell2.github.io/fast/api/xapisimple.html";
         var objectName = buttonName + " Button";
         var resultResponseValue = buttonName;
         let objectDescription = "Example xAPI instrumented button.";
@@ -41,7 +41,7 @@
 </head>
   
 <body>
-    <!-- We’ll send the button’s “name” as optional “response” along with the  with the (actor) (interacted) (button) xAPI statement -->
+    <!-- We’ll send the button’s “name” as optional “response” along with the  with the (actor) (answered) (button) xAPI statement -->
     <button type="button" name="true" onclick="send_statement(this.name)">True</button>
     <button type="button" name="false" onclick="send_statement(this.name)">False</button>
 </body>
