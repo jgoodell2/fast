@@ -19,6 +19,7 @@
         // Set values and set up xAPI Statement in the right format
         var actorName = "jdg"; // Change this to your name or alias
         var actorMail = "mailto:jdg@example.com";
+        var actorOpenId = "https://example.com/users/user-v1:1abcb33beeb811dca15f0ac3e47b88d9";
         var verbId = "http://adlnet.gov/expapi/verbs/answered";
         var verbDisplay =  "answered";
         var objectId = "https://jgoodell2.github.io/fast/api/xapisimple.html";
@@ -32,7 +33,7 @@
         let contextActivityName = "";
        // We’ll fill in other defaults behind the scenes...
        // extensions_user-agent, extensions_aligned_to, platform, registration
-        var statement = setupSimpleXAPI(actorName, actorMail, verbId, verbDisplay, objectId, objectName, objectDescription, resultResponseValue, resultSuccessValue, contextActivity, contextActivityName);
+        var statement = setupSimpleXAPI(actorName, actorOpenId, verbId, verbDisplay, objectId, objectName, objectDescription, resultResponseValue, resultSuccessValue, contextActivity, contextActivityName);
  
         // Dispatch the statement to the LRS
         var result = ADL.XAPIWrapper.sendStatement(statement);
