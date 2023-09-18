@@ -5,7 +5,7 @@
 
                  var statement = {
                      "actor": {
-                         "openId": actorOpenId,
+                         "openid": actorOpenId,
                          "name": actorName,
                          "objectType": "Agent"
                      },
