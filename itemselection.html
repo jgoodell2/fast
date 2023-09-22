@@ -154,47 +154,117 @@
 		  -->
 <div class="container" id="frameworkSelector" style="visibility:hidden">
 		  <!-- NGSS interface -->
-		  <div class="view-filters">
-      <form class="views-exposed-form bef-exposed-form" data-drupal-selector="views-exposed-form-ngss-search-the-standards-page" action="/search-standards" method="get" id="views-exposed-form-ngss-search-the-standards-page" accept-charset="UTF-8">
-  
-<div class="form--inline clearfix">
+<style>
+		
+pre {
+    font-family: monospace, monospace;
+    font-size: 1em;
+}
+.exposed-filters .form-select {
+    width: 14em;
+}
+button, input, optgroup, select, textarea {
+    font-family: inherit;
+    font-size: 100%;
+    line-height: 1.15;
+    margin: 0;
+}
 
-<fieldset data-drupal-selector="edit-type-1" id="edit-type-1--wrapper" class="fieldgroup form-composite js-form-item form-item js-form-wrapper form-wrapper">
-      <legend>
-    <span class="fieldset-legend">Display Only <span class="descrip">Select the appropriate checkbox(es) to restrict results.</span></span>
-  </legend>
-  <div class="fieldset-wrapper">
-            <div id="edit-type-1" class="form-checkboxes"><div class="form-checkboxes bef-checkboxes form--inline">
-                  <div class="js-form-item form-item js-form-type-checkbox form-type-checkbox js-form-item-type-1-dci-arrangement form-item-type-1-dci-arrangement">
-        
-  <div class="icheckbox_square-purple" style="position: relative;"><input data-drupal-selector="edit-type-1-dci-arrangement" type="checkbox" id="edit-type-1-dci-arrangement" name="type_1[dci_arrangement]" value="dci_arrangement" class="form-checkbox form-control" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+button, input {
+    overflow: visible;
+}
 
+button, select {
+    text-transform: none;
+}
+</style>
+<form>
+	GRADE
+<select data-drupal-selector="edit-tid" multiple="multiple" name="tid[]" id="edit-tid" size="9" class="form-select form-control" style="display: none;">
+	<option value="98">K-2</option>
+	<option value="99">K</option>
+	<option value="100">1</option>
+	<option value="101">2</option>
+	<option value="102">3-5</option>
+	<option value="103">3</option>
+	<option value="104">4</option>
+	<option value="105">5</option>
+	<option value="106">Middle School (6-8)</option>
+	<option value="107">High School (9-12)</option>
+</select>
+	PRACTICE
+<select data-drupal-selector="edit-tid-1" multiple="multiple" name="tid_1[]" id="edit-tid-1" size="8" class="form-select form-control" style="display: none;">
+	<option value="108">Asking Questions and Defining Problems</option>
+	<option value="109">Developing and Using Models</option>
+	<option value="110">Planning and Carrying Out Investigations</option>
+	<option value="111">Analyzing and Interpreting Data</option>
+	<option value="112">Using Mathematics and Computational Thinking</option>
+	<option value="113">Constructing Explanations and Designing Solutions</option>
+	<option value="114">Engaging in Argument from Evidence</option>
+	<option value="115">Obtaining, Evaluating, and Communicating Information</option>
+</select>
+DISCIPLINARY CORE IDEA
+<select data-drupal-selector="edit-tid" multiple="multiple" name="tid[]" id="edit-tid" size="9" class="form-select form-control" style="display: none;">
+<option value="${this}">PS1A: STRUCTURE AND PROPERTIES OF MATTER</option>
+<option value="${this}">PS1B: CHEMICAL REACTIONS</option>
+<option value="${this}">PS1C: NUCLEAR PROCESSES</option>
+<option value="${this}">PS2A: FORCES AND MOTION</option>
+<option value="${this}">PS2B: TYPES OF INTERACTIONS</option>
+<option value="${this}">PS3A: DEFINITIONS OF ENERGY</option>
+<option value="${this}">PS3B: CONSERVATION OF ENERGY AND ENERGY TRANSFER</option>
+<option value="${this}">PS3C: RELATIONSHIP BETWEEN ENERGY AND FORCES</option>
+<option value="${this}">PS3D: ENERGY IN CHEMICAL PROCESSES AND EVERYDAY LIFE</option>
+<option value="${this}">PS4A: WAVE PROPERTIES</option>
+<option value="${this}">PS4B: ELECTROMAGNETIC RADIATION</option>
+<option value="${this}">PS4C: INFORMATION TECHNOLOGIES AND INSTRUMENTATION</option>
+<option value="${this}">LS1A: STRUCTURE AND FUNCTION</option>
+<option value="${this}">LS1B: GROWTH AND DEVELOPMENT OF ORGANISMS</option>
+<option value="${this}">LS1C: ORGANIZATION FOR MATTER AND ENERGY FLOW IN ORGANISMS</option>
+<option value="${this}">LS1D: INFORMATION PROCESSING</option>
+<option value="${this}">LS2A: INTERDEPENDENT RELATIONSHIPS IN ECOSYSTEMS</option>
+<option value="${this}">LS2B: CYCLES OF MATTER AND ENERGY TRANSFER IN ECOSYSTEMS</option>
+<option value="${this}">LS2C: ECOSYSTEMS DYNAMICS, FUNCTIONING AND RESILIENCE</option>
+<option value="${this}">LS2D: SOCIAL INTERACTIONS AND GROUP BEHAVIOR</option>
+<option value="${this}">LS3A: INHERITANCE OF TRAITS</option>
+<option value="${this}">LS3B: VARIATION OF TRAITS</option>
+<option value="${this}">LS4A: EVIDENCE OF COMMON ANCESTRY AND DIVERSITY</option>
+<option value="${this}">LS4B: NATURAL SELECTION</option>
+<option value="${this}">LS4C: ADAPTATION</option>
+<option value="${this}">LS4D: BIODIVERSITY AND HUMANS</option>
+<option value="${this}">ESS1A: THE UNIVERSE AND ITS STARS</option>
+<option value="${this}">ESS1B: EARTH AND THE SOLAR SYSTEM</option>
+<option value="${this}">ESS1C: THE HISTORY OF PLANET EARTH</option>
+<option value="${this}">ESS2A: EARTH MATERIALS AND SYSTEMS</option>
+<option value="${this}">ESS2B: PLATE TECTONICS AND LARGE-SCALE SYSTEMS</option>
+<option value="${this}">ESS2C: THE ROLE OF WATER IN EARTH’S SURFACE PROCESSES</option>
+<option value="${this}">ESS2D: WEATHER AND CLIMATE</option>
+<option value="${this}">ESS2E: BIOGEOLOGY</option>
+<option value="${this}">ESS3A: NATURAL RESOURCES</option>
+<option value="${this}">ESS3B: NATURAL HAZARDS</option>
+<option value="${this}">ESS3C: HUMAN IMPACTS ON EARTH SYSTEMS</option>
+<option value="${this}">ESS3D: GLOBAL CLIMATE CHANGE</option>
+<option value="${this}">ETS1A: DEFINING AND DELIMITING AND ENGINEERING PROBLEM</option>
+<option value="${this}">ETS1B: DEVELOPING POSSIBLE SOLUTIONS</option>
+<option value="${this}">ETS1C: OPTIMIZING THE DESIGN SOLUTION</option>
 
-        <label for="edit-type-1-dci-arrangement" class="option">DCI Arrangements</label>
-      </div>
+	DISCIPLINE
+<option value="${this}">PHYSICAL SCIENCES</option>
+<option value="${this}">LIFE SCIENCES</option>
+<option value="${this}">EARTH AND SPACE SCIENCES</option>
+<option value="${this}">ENGINEERING, TECHNOLOGY, AND APPLICATIONS OF SCIENCE</option>
 
-                    <div class="js-form-item form-item js-form-type-checkbox form-type-checkbox js-form-item-type-1-performance-expectation form-item-type-1-performance-expectation">
-        
-  <div class="icheckbox_square-purple" style="position: relative;"><input data-drupal-selector="edit-type-1-performance-expectation" type="checkbox" id="edit-type-1-performance-expectation" name="type_1[performance_expectation]" value="performance_expectation" class="form-checkbox form-control" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
-
-
-        <label for="edit-type-1-performance-expectation" class="option">Performance Expectation</label>
-      </div>
-
-                    <div class="js-form-item form-item js-form-type-checkbox form-type-checkbox js-form-item-type-1-topic-arrangement form-item-type-1-topic-arrangement">
-        
-  <div class="icheckbox_square-purple" style="position: relative;"><input data-drupal-selector="edit-type-1-topic-arrangement" type="checkbox" id="edit-type-1-topic-arrangement" name="type_1[topic_arrangement]" value="topic_arrangement" class="form-checkbox form-control" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
-
-
-        <label for="edit-type-1-topic-arrangement" class="option">Topic Arrangements</label>
-      </div>
-
-      </div>
-</div>
-
-          </div>
-</fieldset>
-</div></form></div></div>
+	CROSS-CUTTING CONCEPT
+<option value="${this}">PATTERNS</option>
+<option value="${this}">CAUSE AND EFFECT</option>
+<option value="${this}">SCALE, PROPORTION, AND QUANTITY</option>
+<option value="${this}">SYSTEMS AND SYSTEM MODELS</option>
+<option value="${this}">ENERGY AND MATTER</option>
+<option value="${this}">STRUCTURE AND FUNCTION</option>
+<option value="${this}">STABILITY AND CHANGE</option>
+<option value="${this}">INTERDEPENDENCE OF SCIENCE, ENGINEERING, AND TECHNOLOGY</option>
+<option value="${this}">INFLUENCE OF ENGINEERING, TECHNOLOGY, AND SCIENCE ON SOCIETY AND THE NATURAL WORLD</option>
+	
+</form></div></div>
 	  </section>
 	
 	<hr>
