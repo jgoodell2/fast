@@ -152,136 +152,139 @@
 			</div>
 		  </div>
 		  -->
-<div class="container" id="frameworkSelector" style="visibility:hidden">
-		  <!-- NGSS interface -->
-<style>
+	<div class="container" id="frameworkSelector" style="visibility:hidden">
+			  <!-- NGSS interface -->
+		<style>
+				
+		pre {
+		    font-family: monospace, monospace;
+		    font-size: 1em;
+		}
+		.exposed-filters .form-select {
+		    width: 14em;
+		}
+		button, input, optgroup, select, textarea {
+		    font-family: inherit;
+		    font-size: 100%;
+		    line-height: 1.15;
+		    margin: 0;
+		}
 		
-pre {
-    font-family: monospace, monospace;
-    font-size: 1em;
-}
-.exposed-filters .form-select {
-    width: 14em;
-}
-button, input, optgroup, select, textarea {
-    font-family: inherit;
-    font-size: 100%;
-    line-height: 1.15;
-    margin: 0;
-}
-
-button, input {
-    overflow: visible;
-}
-
-button, select {
-    text-transform: none;
-}
-
-.blue_box_button {
-    font-family: inherit;
-    font-size: 100%;
-    line-height: 1.15;
-    margin: 0;
-color: #FFFFFF;
-    text-decoration: none;
-    background-color: #0056b3;
-}
-</style>
-<form>
-	<div class="js-form-item form-item js-form-type-select form-type-select js-form-item-tid form-item-tid">
-
-        <select data-drupal-selector="edit-tid" multiple="multiple" name="tid[]" id="edit-tid" size="9" class="form-select form-control" style="display: none;"><option value="98">K-2</option><option value="99">K</option><option value="100">1</option><option value="101">2</option><option value="102">3-5</option><option value="103">3</option><option value="104">4</option><option value="105">5</option><option value="106">Middle School (6-8)</option><option value="107">High School (9-12)</option></select><div class="btn-group" style="width: 250px;"><button type="button" class="multiselect dropdown-toggle btn btn-default" data-toggle="dropdown" title="Select" style="width: 250px; overflow: hidden; text-overflow: ellipsis;"><span class="multiselect-selected-text">Select</span> <b class="caret"></b></button><ul class="multiselect-container dropdown-menu" style="max-height: 300px; overflow: hidden auto;"><li><a tabindex="0"><label class="checkbox"><input type="checkbox" value="98"> K-2</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" value="99"> K</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" value="100"> 1</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" value="101"> 2</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" value="102"> 3-5</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" value="103"> 3</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" value="104"> 4</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" value="105"> 5</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" value="106"> Middle School (6-8)</label></a></li><li><a tabindex="0"><label class="checkbox"><input type="checkbox" value="107"> High School (9-12)</label></a></li></ul></div>
-        </div>
-<div id="NGSS_GRADE_SELECTOR">
-<label>Grade</label>
-<select name="grade_select" id="grade_select" size="9">
-	<option value="98">K-2</option>
-	<option value="99">K</option>
-	<option value="100">1</option>
-	<option value="101">2</option>
-	<option value="102">3-5</option>
-	<option value="103">3</option>
-	<option value="104">4</option>
-	<option value="105">5</option>
-	<option value="106">Middle School (6-8)</option>
-	<option value="107">High School (9-12)</option>
-</select>
-</div>
-	
-	PRACTICE
-<select data-drupal-selector="edit-tid-1" multiple="multiple" name="tid_1[]" id="edit-tid-1" size="8" class="form-select form-control" style="display: none;">
-	<option value="108">Asking Questions and Defining Problems</option>
-	<option value="109">Developing and Using Models</option>
-	<option value="110">Planning and Carrying Out Investigations</option>
-	<option value="111">Analyzing and Interpreting Data</option>
-	<option value="112">Using Mathematics and Computational Thinking</option>
-	<option value="113">Constructing Explanations and Designing Solutions</option>
-	<option value="114">Engaging in Argument from Evidence</option>
-	<option value="115">Obtaining, Evaluating, and Communicating Information</option>
-</select>
-DISCIPLINARY CORE IDEA
-<select data-drupal-selector="edit-tid" multiple="multiple" name="tid[]" id="edit-tid" size="9" class="form-select form-control" style="display: none;">
-<option value="${this}">PS1A: STRUCTURE AND PROPERTIES OF MATTER</option>
-<option value="${this}">PS1B: CHEMICAL REACTIONS</option>
-<option value="${this}">PS1C: NUCLEAR PROCESSES</option>
-<option value="${this}">PS2A: FORCES AND MOTION</option>
-<option value="${this}">PS2B: TYPES OF INTERACTIONS</option>
-<option value="${this}">PS3A: DEFINITIONS OF ENERGY</option>
-<option value="${this}">PS3B: CONSERVATION OF ENERGY AND ENERGY TRANSFER</option>
-<option value="${this}">PS3C: RELATIONSHIP BETWEEN ENERGY AND FORCES</option>
-<option value="${this}">PS3D: ENERGY IN CHEMICAL PROCESSES AND EVERYDAY LIFE</option>
-<option value="${this}">PS4A: WAVE PROPERTIES</option>
-<option value="${this}">PS4B: ELECTROMAGNETIC RADIATION</option>
-<option value="${this}">PS4C: INFORMATION TECHNOLOGIES AND INSTRUMENTATION</option>
-<option value="${this}">LS1A: STRUCTURE AND FUNCTION</option>
-<option value="${this}">LS1B: GROWTH AND DEVELOPMENT OF ORGANISMS</option>
-<option value="${this}">LS1C: ORGANIZATION FOR MATTER AND ENERGY FLOW IN ORGANISMS</option>
-<option value="${this}">LS1D: INFORMATION PROCESSING</option>
-<option value="${this}">LS2A: INTERDEPENDENT RELATIONSHIPS IN ECOSYSTEMS</option>
-<option value="${this}">LS2B: CYCLES OF MATTER AND ENERGY TRANSFER IN ECOSYSTEMS</option>
-<option value="${this}">LS2C: ECOSYSTEMS DYNAMICS, FUNCTIONING AND RESILIENCE</option>
-<option value="${this}">LS2D: SOCIAL INTERACTIONS AND GROUP BEHAVIOR</option>
-<option value="${this}">LS3A: INHERITANCE OF TRAITS</option>
-<option value="${this}">LS3B: VARIATION OF TRAITS</option>
-<option value="${this}">LS4A: EVIDENCE OF COMMON ANCESTRY AND DIVERSITY</option>
-<option value="${this}">LS4B: NATURAL SELECTION</option>
-<option value="${this}">LS4C: ADAPTATION</option>
-<option value="${this}">LS4D: BIODIVERSITY AND HUMANS</option>
-<option value="${this}">ESS1A: THE UNIVERSE AND ITS STARS</option>
-<option value="${this}">ESS1B: EARTH AND THE SOLAR SYSTEM</option>
-<option value="${this}">ESS1C: THE HISTORY OF PLANET EARTH</option>
-<option value="${this}">ESS2A: EARTH MATERIALS AND SYSTEMS</option>
-<option value="${this}">ESS2B: PLATE TECTONICS AND LARGE-SCALE SYSTEMS</option>
-<option value="${this}">ESS2C: THE ROLE OF WATER IN EARTH’S SURFACE PROCESSES</option>
-<option value="${this}">ESS2D: WEATHER AND CLIMATE</option>
-<option value="${this}">ESS2E: BIOGEOLOGY</option>
-<option value="${this}">ESS3A: NATURAL RESOURCES</option>
-<option value="${this}">ESS3B: NATURAL HAZARDS</option>
-<option value="${this}">ESS3C: HUMAN IMPACTS ON EARTH SYSTEMS</option>
-<option value="${this}">ESS3D: GLOBAL CLIMATE CHANGE</option>
-<option value="${this}">ETS1A: DEFINING AND DELIMITING AND ENGINEERING PROBLEM</option>
-<option value="${this}">ETS1B: DEVELOPING POSSIBLE SOLUTIONS</option>
-<option value="${this}">ETS1C: OPTIMIZING THE DESIGN SOLUTION</option>
-
-	DISCIPLINE
-<option value="${this}">PHYSICAL SCIENCES</option>
-<option value="${this}">LIFE SCIENCES</option>
-<option value="${this}">EARTH AND SPACE SCIENCES</option>
-<option value="${this}">ENGINEERING, TECHNOLOGY, AND APPLICATIONS OF SCIENCE</option>
-
-	CROSS-CUTTING CONCEPT
-<option value="${this}">PATTERNS</option>
-<option value="${this}">CAUSE AND EFFECT</option>
-<option value="${this}">SCALE, PROPORTION, AND QUANTITY</option>
-<option value="${this}">SYSTEMS AND SYSTEM MODELS</option>
-<option value="${this}">ENERGY AND MATTER</option>
-<option value="${this}">STRUCTURE AND FUNCTION</option>
-<option value="${this}">STABILITY AND CHANGE</option>
-<option value="${this}">INTERDEPENDENCE OF SCIENCE, ENGINEERING, AND TECHNOLOGY</option>
-<option value="${this}">INFLUENCE OF ENGINEERING, TECHNOLOGY, AND SCIENCE ON SOCIETY AND THE NATURAL WORLD</option>
-	
-</form></div></div>
+		button, input {
+		    overflow: visible;
+		}
+		
+		button, select {
+		    text-transform: none;
+		}
+		
+		.blue_box_button {
+		    font-family: inherit;
+		    font-size: 100%;
+		    line-height: 1.15;
+		    margin: 0;
+		color: #FFFFFF;
+		    text-decoration: none;
+		    background-color: #0056b3;
+		}
+		</style>
+		<form>
+			
+			<div id="NGSS_GRADE_SELECTOR">
+			<label>Grade</label>
+			<select name="grade_select" id="grade_select" size="9" class="blue_box_button">
+				<option value="98">K-2</option>
+				<option value="99">K</option>
+				<option value="100">1</option>
+				<option value="101">2</option>
+				<option value="102">3-5</option>
+				<option value="103">3</option>
+				<option value="104">4</option>
+				<option value="105">5</option>
+				<option value="106">Middle School (6-8)</option>
+				<option value="107">High School (9-12)</option>
+			</select>
+			</div>
+				
+				PRACTICE
+			<select data-drupal-selector="edit-tid-1" multiple="multiple" name="tid_1[]" id="edit-tid-1" size="8" class="form-select form-control">
+				<option value="108">Asking Questions and Defining Problems</option>
+				<option value="109">Developing and Using Models</option>
+				<option value="110">Planning and Carrying Out Investigations</option>
+				<option value="111">Analyzing and Interpreting Data</option>
+				<option value="112">Using Mathematics and Computational Thinking</option>
+				<option value="113">Constructing Explanations and Designing Solutions</option>
+				<option value="114">Engaging in Argument from Evidence</option>
+				<option value="115">Obtaining, Evaluating, and Communicating Information</option>
+			</select>
+			DISCIPLINARY CORE IDEA
+			<select data-drupal-selector="edit-tid" multiple="multiple" name="tid[]" id="edit-tid" size="9" class="form-select form-control">
+				<option value="${this}">PS1A: STRUCTURE AND PROPERTIES OF MATTER</option>
+				<option value="${this}">PS1B: CHEMICAL REACTIONS</option>
+				<option value="${this}">PS1C: NUCLEAR PROCESSES</option>
+				<option value="${this}">PS2A: FORCES AND MOTION</option>
+				<option value="${this}">PS2B: TYPES OF INTERACTIONS</option>
+				<option value="${this}">PS3A: DEFINITIONS OF ENERGY</option>
+				<option value="${this}">PS3B: CONSERVATION OF ENERGY AND ENERGY TRANSFER</option>
+				<option value="${this}">PS3C: RELATIONSHIP BETWEEN ENERGY AND FORCES</option>
+				<option value="${this}">PS3D: ENERGY IN CHEMICAL PROCESSES AND EVERYDAY LIFE</option>
+				<option value="${this}">PS4A: WAVE PROPERTIES</option>
+				<option value="${this}">PS4B: ELECTROMAGNETIC RADIATION</option>
+				<option value="${this}">PS4C: INFORMATION TECHNOLOGIES AND INSTRUMENTATION</option>
+				<option value="${this}">LS1A: STRUCTURE AND FUNCTION</option>
+				<option value="${this}">LS1B: GROWTH AND DEVELOPMENT OF ORGANISMS</option>
+				<option value="${this}">LS1C: ORGANIZATION FOR MATTER AND ENERGY FLOW IN ORGANISMS</option>
+				<option value="${this}">LS1D: INFORMATION PROCESSING</option>
+				<option value="${this}">LS2A: INTERDEPENDENT RELATIONSHIPS IN ECOSYSTEMS</option>
+				<option value="${this}">LS2B: CYCLES OF MATTER AND ENERGY TRANSFER IN ECOSYSTEMS</option>
+				<option value="${this}">LS2C: ECOSYSTEMS DYNAMICS, FUNCTIONING AND RESILIENCE</option>
+				<option value="${this}">LS2D: SOCIAL INTERACTIONS AND GROUP BEHAVIOR</option>
+				<option value="${this}">LS3A: INHERITANCE OF TRAITS</option>
+				<option value="${this}">LS3B: VARIATION OF TRAITS</option>
+				<option value="${this}">LS4A: EVIDENCE OF COMMON ANCESTRY AND DIVERSITY</option>
+				<option value="${this}">LS4B: NATURAL SELECTION</option>
+				<option value="${this}">LS4C: ADAPTATION</option>
+				<option value="${this}">LS4D: BIODIVERSITY AND HUMANS</option>
+				<option value="${this}">ESS1A: THE UNIVERSE AND ITS STARS</option>
+				<option value="${this}">ESS1B: EARTH AND THE SOLAR SYSTEM</option>
+				<option value="${this}">ESS1C: THE HISTORY OF PLANET EARTH</option>
+				<option value="${this}">ESS2A: EARTH MATERIALS AND SYSTEMS</option>
+				<option value="${this}">ESS2B: PLATE TECTONICS AND LARGE-SCALE SYSTEMS</option>
+				<option value="${this}">ESS2C: THE ROLE OF WATER IN EARTH’S SURFACE PROCESSES</option>
+				<option value="${this}">ESS2D: WEATHER AND CLIMATE</option>
+				<option value="${this}">ESS2E: BIOGEOLOGY</option>
+				<option value="${this}">ESS3A: NATURAL RESOURCES</option>
+				<option value="${this}">ESS3B: NATURAL HAZARDS</option>
+				<option value="${this}">ESS3C: HUMAN IMPACTS ON EARTH SYSTEMS</option>
+				<option value="${this}">ESS3D: GLOBAL CLIMATE CHANGE</option>
+				<option value="${this}">ETS1A: DEFINING AND DELIMITING AND ENGINEERING PROBLEM</option>
+				<option value="${this}">ETS1B: DEVELOPING POSSIBLE SOLUTIONS</option>
+				<option value="${this}">ETS1C: OPTIMIZING THE DESIGN SOLUTION</option>
+			</select>			
+		
+			<select data-drupal-selector="edit-tid" multiple="multiple" name="tid[]" id="edit-tid" size="9" class="form-select form-control">
+			DISCIPLINE
+				<option value="${this}">PHYSICAL SCIENCES</option>
+				<option value="${this}">LIFE SCIENCES</option>
+				<option value="${this}">EARTH AND SPACE SCIENCES</option>
+				<option value="${this}">ENGINEERING, TECHNOLOGY, AND APPLICATIONS OF SCIENCE</option>
+			</select>
+		
+			<select data-drupal-selector="edit-tid" multiple="multiple" name="tid[]" id="edit-tid" size="9" class="form-select form-control">
+			CROSS-CUTTING CONCEPT
+				<option value="${this}">PATTERNS</option>
+				<option value="${this}">CAUSE AND EFFECT</option>
+				<option value="${this}">SCALE, PROPORTION, AND QUANTITY</option>
+				<option value="${this}">SYSTEMS AND SYSTEM MODELS</option>
+				<option value="${this}">ENERGY AND MATTER</option>
+				<option value="${this}">STRUCTURE AND FUNCTION</option>
+				<option value="${this}">STABILITY AND CHANGE</option>
+				<option value="${this}">INTERDEPENDENCE OF SCIENCE, ENGINEERING, AND TECHNOLOGY</option>
+				<option value="${this}">INFLUENCE OF ENGINEERING, TECHNOLOGY, AND SCIENCE ON SOCIETY AND THE NATURAL WORLD</option>
+			</select>
+		</form>
+	</div>
+		  
 	  </section>
 	
 	<hr>
