@@ -27,7 +27,7 @@
                                           {
                                                    "id": contextActivity,
                                                    "name": contextActivityName,
-                                                   "objectType": "AssessmentTemplate"
+                                                   "objectType": "ActivityTemplate"
                                           }
                                           ]
                      }
