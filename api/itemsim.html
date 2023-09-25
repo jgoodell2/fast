@@ -162,14 +162,13 @@ function nextItem() {
       for (let i = 0; i < feedbackObjArray.length; i++) {
           if (feedbackObjArray[i].match == responseValueText) {
               document.getElementById("feedback").innerHTML = feedbackObjArray[i].feedback;
-              if (i < 1) {
-                  success = true;
-              }
+              if (i < 1) { success = true; } // First item in array is the correct answer
           }
         }
-	    //SEND the xAPI Statement
-	    var item = "00" + currentItemArrayPos;
-	    send_statement(item, responseValueText, success);
+      //SEND the xAPI Statement
+      var item = "00" + currentItemArrayPos;
+	    console.log("Success: " + success);
+      send_statement(item, responseValueText, success);
     }
 
     function nextHint() {
