@@ -169,7 +169,7 @@ function nextItem() {
           }
         }
 	    //SEND the xAPI Statement
-	    var item = "00" + i;
+	    var item = "00" + currentItemArrayPos;
 	    send_statement(item, responseValueText, success);
     }
 
