@@ -33,7 +33,7 @@
         let contextActivityName = "";
        // We’ll fill in other defaults behind the scenes...
        // extensions_user-agent, extensions_aligned_to, platform, registration
-        var statement = setupSimpleXAPI(actorName, actorOpenId, verbId, verbDisplay, objectId, objectName, objectDescription, resultResponseValue, resultSuccessValue, contextActivity);
+        var statement = setupSimpleXAPI(actorName, actorOpenId, verbId, verbDisplay, objectId, objectName, objectDescription, resultResponseValue, resultSuccessValue, contextActivity, agent);
  
         // Dispatch the statement to the LRS
         var result = ADL.XAPIWrapper.sendStatement(statement);
