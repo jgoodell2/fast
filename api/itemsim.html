@@ -55,6 +55,44 @@ tr:nth-child(2) {
 }
 </style>
 
+<!-- xAPI scripts -->
+<script type="text/javascript" src="./js/jimsxapiwrapper.js"></script>
+<script type="text/javascript" src="./js/cryptojs_v3.1.2.js"></script>
+<script type="text/javascript" src="./js/xAPIWrapper.js"></script>
+
+   <!-- The following script handles the local details to send the xAPI Statement -->
+    <script>
+    function send_statement(item, response, success){
+        var conf = {
+             "endpoint" : "https://lrs.adlnet.gov/xapi/",
+             "auth" : "Basic " + toBase64("xapi-tools:xapi-tools")
+             };
+        ADL.XAPIWrapper.changeConfig(conf);
+ 
+        // Set values and set up xAPI Statement in the right format
+        var actorName = "https://example.com/users/user-v1:1abcb33beeb811dca15f0ac3e47b88d9"; // Anonomous hashed id
+        //var actorMail = "mailto:jdg@example.com";
+        var actorOpenId = "https://example.com/users/user-v1:1abcb33beeb811dca15f0ac3e47b88d9";
+        var verbId = "http://adlnet.gov/expapi/verbs/answered";
+        var verbDisplay =  "answered";
+        var objectId = "https://example.com/activity/dca15f0ac3e47b88d91abcb33beeb811_" + item;
+        var objectName = "Fraction item dca15f0ac3e47b88d91abcb33beeb811_" + item;
+        var resultResponseValue = response;
+        let objectDescription = "Example xAPI instrumented button.";
+        var resultSuccessValue = false;
+        if (buttonName=="true") {resultSuccessValue=true};
+        let agent = navigator.userAgent;
+        let contextActivity = "https://example.com/activity/dca15f0ac3e47b88d91abcb33beeb811";
+        let contextActivityName = "Algebra problem with one variable as denominator and fraction on the right.";
+       // We’ll fill in other defaults behind the scenes...
+       // extensions_user-agent, extensions_aligned_to, platform, registration
+        var statement = setupSimpleXAPI(actorName, actorOpenId, verbId, verbDisplay, objectId, objectName, objectDescription, resultResponseValue, resultSuccessValue, contextActivity, contextActivityName);
+ 
+        // Dispatch the statement to the LRS
+        var result = ADL.XAPIWrapper.sendStatement(statement);
+    }
+    </script>
+	
 <script>
 // Global variables
 //Variables use in item content
@@ -82,10 +120,7 @@ function hintEvent() {
     //Add code to log hint
     
 }
-function answeredEvent() {
-  //Add code to log the response as xAPI
 
-}
 
 
 function nextItem() {
@@ -133,7 +168,9 @@ function nextItem() {
               }
           }
         }
-      answeredEvent(success); // First in array is correct answer
+	    //SEND the xAPI Statement
+	    var item = "00" + i;
+	    send_statement(item, responseValueText, success);
     }
 
     function nextHint() {
