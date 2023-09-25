@@ -79,7 +79,7 @@ tr:nth-child(2) {
         var objectName = "Fraction item dca15f0ac3e47b88d91abcb33beeb811_" + item;
         var resultResponseValue = response;
         let objectDescription = "Example xAPI instrumented button.";
-        var resultSuccessValue = false;
+        var resultSuccessValue = success;
         let agent = navigator.userAgent;
         let contextActivity = "https://example.com/activity/dca15f0ac3e47b88d91abcb33beeb811";
         let contextActivityName = "Algebra problem with one variable as denominator and fraction on the right.";
@@ -162,7 +162,7 @@ function nextItem() {
       for (let i = 0; i < feedbackObjArray.length; i++) {
           if (feedbackObjArray[i].match == responseValueText) {
               document.getElementById("feedback").innerHTML = feedbackObjArray[i].feedback;
-              if (i < 1) { success = true; } // First item in array is the correct answer
+              if (i==0) { success = true; } // First item in array is the correct answer
           }
         }
       //SEND the xAPI Statement
