@@ -22,6 +22,15 @@
                          }
                      },
                      "context": {
+                        "contextActivities": {
+                                 "parent": [
+                                          {
+                                                   "id": contextActivity,
+                                                   "name": contextActivityName,
+                                                   "objectType": "AssessmentTemplate"
+                                          }
+                                          ]
+                     }
                         "extensions": {
                            "https://credreg.net/ctdlasn/terms/Competency#alignTo": "https://credentialengineregistry.org/resources/ce-4451c5bf-6e1f-4935-9e63-e1c4f18b6e18",
                            "https://w3id.org/xapi/netc/extensions/user-agent": navigator.userAgent
