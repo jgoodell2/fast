@@ -162,9 +162,8 @@ function nextItem() {
       for (let i = 0; i < feedbackObjArray.length; i++) {
           if (feedbackObjArray[i].match == responseValueText) {
               document.getElementById("feedback").innerHTML = feedbackObjArray[i].feedback;
-              if (i = 0) {
+              if (i < 1) {
                   success = true;
-		      console.log("success");
               }
           }
         }
