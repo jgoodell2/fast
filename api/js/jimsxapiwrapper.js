@@ -1,5 +1,5 @@
 
-function setupSimpleXAPI(actorName, actorOpenId, verbId, verbDisplay, objectId, objectName, objectDescription, resultResponseValue, resultSuccessValue, contextActivity){
+function setupSimpleXAPI(actorName, actorOpenId, verbId, verbDisplay, objectId, objectName, objectDescription, resultResponseValue, resultSuccessValue, contextActivity, agent){
 
          let userAgent = JSON.stringify(navigator.userAgent);
          
