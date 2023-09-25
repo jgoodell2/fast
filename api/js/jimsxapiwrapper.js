@@ -1,5 +1,5 @@
 
-function setupSimpleXAPI(actorName, actorOpenId, verbId, verbDisplay, objectId, objectName, objectDescription, resultResponseValue, resultSuccessValue, contextActivity, contextActivityName){
+function setupSimpleXAPI(actorName, actorOpenId, verbId, verbDisplay, objectId, objectName, objectDescription, resultResponseValue, resultSuccessValue, contextActivity){
 
          let userAgent = JSON.stringify(navigator.userAgent);
          
@@ -26,7 +26,6 @@ function setupSimpleXAPI(actorName, actorOpenId, verbId, verbDisplay, objectId, 
                                     "parent": [
                                     {
                                     "id": contextActivity,
-                                    "name": contextActivityName,
                                     "objectType": "ActivityTemplate"
                                     }
                                     ]
