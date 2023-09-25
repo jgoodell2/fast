@@ -26,7 +26,7 @@ function setupSimpleXAPI(actorName, actorOpenId, verbId, verbDisplay, objectId, 
                                     "parent": [
                                     {
                                     "id": contextActivity,
-                                    "objectType": "ActivityTemplate"
+                                    "objectType": "ActivityTemplate" 
                                     }
                                     ]
                            },
