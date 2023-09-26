@@ -59,13 +59,13 @@
     <section>
       <div class="container">
 	 <div class="row">
-			<div class="col-12 card bg-light mx-auto" style="height: 2.4em;">
+			<div class="col-12 mx-auto" style="height: 2.4em;">
 				<div style="float: right;"><image src="./images/user_profile_icon.png" class="icon"></image></div>
 			</div>
 	 </div>
         <div class="row">
 			<div class="col-12 card bg-light mx-auto">
-              <h5 class="text-center card-header">Select an Academic Stamdard or Curriculum Framework</h5>
+              <h5 class="text-center card-header">Academic Stamdard or Curriculum Framework</h5>
               <form class="card-body">
                 <div class="form-group row">
                   <label for="location1" class="col-form-label">State</label>
@@ -130,7 +130,11 @@
 		}
 		</style>
 		<form>
-			<table><tr><td><label>Search:</label></td><td><input size='80' style='width:100%'>Enter a keyword or category within the framework.</input></td><td><input type="button">Go</td></tr></table>
+			<table><tr>
+				<td><label>Search:</label></td>
+				<td><input size='80' style='width:100%;color:grey;' value="Enter a keyword or category within the framework." onEnter="this.style.color='black';" onChange="search();"></input></td>
+				<td><input type="button" name="Go"></td>
+			</tr></table>
 			<div class="form-group row">
 				<label  class="col-form-label">GRADE</label>
 				<select class="blue_box_select" name="grade_select" id="grade_select">
