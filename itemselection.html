@@ -133,15 +133,16 @@
 			function search(searchfield) {
 				var val = (searchfield.value.toLowerCase());
 				if (val=="energy") {
-					alert("energy");
+					console.log("match");
 				}
+				console.log("Field: " + searchfield + " toLower: " + val);
 			}
 		</script>
 				
 		<form>
 			<table><tr>
 				<td><label>Search:</label></td>
-				<td><input id="searchfield" size='80' style='width:100%;color:grey;' value="Enter a keyword or category within the framework." onFocus="this.style.color=black;this.value='';" onChange="search(this);"></input></td>
+				<td><input id="searchfield" size='80' style='width:100%;color:grey;' value="Enter a keyword or category within the framework." onFocus="this.style.color='black';this.value='';" onChange="search(this);"></input></td>
 			</tr></table>
 			<div class="form-group row">
 				<label  class="col-form-label">GRADE</label>
