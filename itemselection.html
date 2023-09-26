@@ -24,11 +24,12 @@
 	  </style>
 	<script> 
 		function searchFramework(item) {
-			if (item.value=="energy") {
+			let val = item.value.toLowerCase();
+			if (val=="energy") {
 				document.getElementById("disciplinary_core_idea_option_PS3B").selected = true;
+				document.getElementById("activitySelector").visibility = "visible";
 			}
-			let val = item.value;
-			console.log(val.toUpperCase());
+
 		}
 	</script>
   </head>
