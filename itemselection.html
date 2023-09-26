@@ -10,7 +10,7 @@
 	<!-- JS Tree -->
     <link rel="stylesheet" href="./jstree/themes/default/style.min.css" />
 	  <style>
-		  .icon{width:1.7em;height:1.7em;float:right;}
+		  .icon{width:2em;height:2em;float:right;}
 		  .jstree-container-ul>li>a>i.jstree-checkbox {display:none}
 		  .jstree-no-checkbox > a > i.jstree-checkbox {display:none;}
 		  .jstree-anchor { 
@@ -131,10 +131,10 @@
 		    text-transform: none;
 		}
 		
-		.blue_box_button select {
+		.blue_box_select {
 		    font-family: inherit;
 		    font-size: 100%;
-		    line-height: 1.15;
+		    line-height: 2;
 		    margin: 0;
 		color: #FFFFFF;
 		    text-decoration: none;
@@ -142,10 +142,10 @@
 		}
 		</style>
 		<form>
-			
-			<div id="NGSS_GRADE_SELECTOR">
-			<label>Grade</label>
-			<select class="form-select blue_box_button" name="grade_select" id="grade_select">
+			<label>Search: </label>
+			<input size='' style='width:100%' />
+			<label>GRADE</label>
+			<select class="blue_box_select" name="grade_select" id="grade_select">
 				<option value="98">K-2</option>
 				<option value="99">K</option>
 				<option value="100">1</option>
@@ -157,20 +157,8 @@
 				<option value="106">Middle School (6-8)</option>
 				<option value="107">High School (9-12)</option>
 			</select>
-			</div>
 				<br/>
-			<label>PRACTICE</label>
-			<select class="form-select blue_box_button" name="grade_select" id="grade_select">
-				<option value="108">Asking Questions and Defining Problems</option>
-				<option value="109">Developing and Using Models</option>
-				<option value="110">Planning and Carrying Out Investigations</option>
-				<option value="111">Analyzing and Interpreting Data</option>
-				<option value="112">Using Mathematics and Computational Thinking</option>
-				<option value="113">Constructing Explanations and Designing Solutions</option>
-				<option value="114">Engaging in Argument from Evidence</option>
-				<option value="115">Obtaining, Evaluating, and Communicating Information</option>
-			</select>
-			<br/>
+
 			<label>DISCIPLINARY CORE IDEA</label>
 			<select class="form-select blue_box_button" name="grade_select" id="grade_select">
 				<option value="${this}">PS1A: STRUCTURE AND PROPERTIES OF MATTER</option>
@@ -216,6 +204,18 @@
 				<option value="${this}">ETS1C: OPTIMIZING THE DESIGN SOLUTION</option>
 			</select>			
 <br/>
+						<label>PRACTICE</label>
+			<select class="form-select blue_box_button" name="grade_select" id="grade_select">
+				<option value="108">Asking Questions and Defining Problems</option>
+				<option value="109">Developing and Using Models</option>
+				<option value="110">Planning and Carrying Out Investigations</option>
+				<option value="111">Analyzing and Interpreting Data</option>
+				<option value="112">Using Mathematics and Computational Thinking</option>
+				<option value="113">Constructing Explanations and Designing Solutions</option>
+				<option value="114">Engaging in Argument from Evidence</option>
+				<option value="115">Obtaining, Evaluating, and Communicating Information</option>
+			</select>
+			<br/>
 			<label>DISCIPLINE</label>
 			<select class="form-select blue_box_button" name="grade_select" id="grade_select">
 			
