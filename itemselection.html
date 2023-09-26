@@ -50,7 +50,7 @@
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="sr-only">Next</span>
             </a>
-		    <image src="./images/user_profile_icon.png" class="icon">  
+		     
           </div>
         </div>
       </div>
@@ -58,6 +58,11 @@
     </div>
     <section>
       <div class="container">
+	 <div class="row">
+			<div class="col-12 card bg-light mx-auto">
+				<image src="./images/user_profile_icon.png" class="icon"></image>
+			</div>
+	 </div>
         <div class="row">
 			<div class="col-12 card bg-light mx-auto">
               <h5 class="text-center card-header">Select an Academic Stamdard or Curriculum Framework</h5>
@@ -114,7 +119,8 @@
 		.blue_box_select {
 		    font-family: inherit;
 		    font-size: 100%;
-		    line-height: 2;
+		    line-height: 2em;
+			height: 2em;
 		    margin: 0;
 		color: #FFFFFF;
 		    text-decoration: none;
@@ -127,6 +133,7 @@
 			
 			<label>GRADE</label>
 			<select class="blue_box_select" name="grade_select" id="grade_select">
+				<option value="98">-- Select Filter --</option>
 				<option value="98">K-2</option>
 				<option value="99">K</option>
 				<option value="100">1</option>
@@ -142,6 +149,7 @@
 
 			<label>DISCIPLINARY CORE IDEA</label>
 			<select class="blue_box_select" name="grade_select" id="grade_select">
+				<option value="98">-- Select Filter --</option>
 				<option value="${this}">PS1A: STRUCTURE AND PROPERTIES OF MATTER</option>
 				<option value="${this}">PS1B: CHEMICAL REACTIONS</option>
 				<option value="${this}">PS1C: NUCLEAR PROCESSES</option>
