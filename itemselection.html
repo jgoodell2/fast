@@ -27,13 +27,13 @@
 			let val = item.value.toLowerCase();
 			if (val=="energy") {
 				document.getElementById("disciplinary_core_idea_option_PS3B").selected = true;
-				document.getElementById("activitySelector").visibility = "visible";
+				showActivitySelector();
 			}
 
 		}
 	</script>
   </head>
-  <body>
+  <body onLoad="showNGSSSearch()">
 	  
 	
     <div class="container mt-3">
@@ -140,7 +140,7 @@
                   <label for="location1" class="col-form-label">Framework</label>
                   <select class="form-control" name="location" id="framework" onChange="showFramework()">
 			<option value="">-- Select One --</option>
-			  <option value="" selected>California Next Generation Sciences Standards</option>
+			  <option value="NGSS" selected>California Next Generation Sciences Standards</option>
 			<option>Common Core State Standards for English Language Arts</option>
 		 	<option>Common Core State Standards for Mathematics</option>
 			
@@ -468,6 +468,9 @@ The following learning sciences concepts are applied in this activity:
 	  }
 	  function showActivitySelector() {
 	  	document.getElementById("activitySelector").style.visibility = "visible";
+	  }
+	  function showNGSSSearch() {
+		  if (document.getElementById("NGSS").selected) {showFramework()};
 	  }
   </script>
 	  
