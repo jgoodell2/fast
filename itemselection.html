@@ -22,6 +22,14 @@
 				padding-right : 24px;
 			}
 	  </style>
+	<script> 
+		function searchFramework(item) {
+			if (item.value=="energy") {
+				alert("match");
+			}
+			console.log("Field: " + searchfield + " toLower: " + val);
+		}
+	</script>
   </head>
   <body>
 	  
@@ -129,15 +137,7 @@
 			background-color: #0056b3;
 		}
 		</style>
-		<script> 
-			function searchFramework(val) {
-	
-				if (val=="energy") {
-					alert("match");
-				}
-				console.log("Field: " + searchfield + " toLower: " + val);
-			}
-		</script>
+
 				
 		<form>
 			<table><tr>
