@@ -129,11 +129,19 @@
 			background-color: #0056b3;
 		}
 		</style>
+		<script> 
+			function search(searchfield) {
+				String val = (searchfield.value);
+				if (val.toLowerCase.value=="energy") {
+					alert("energy");
+				}
+			}
+
+				
 		<form>
 			<table><tr>
 				<td><label>Search:</label></td>
-				<td><input size='80' style='width:100%;color:grey;' value="Enter a keyword or category within the framework." onEnter="this.style.color='black';" onChange="search();"></input></td>
-				<td><input type="button" name="Go"></td>
+				<td><input id="searchfield" size='80' style='width:100%;color:grey;' value="Enter a keyword or category within the framework." onFocus="this.style.color=black;this.value='';" onChange="search(this);"></input></td>
 			</tr></table>
 			<div class="form-group row">
 				<label  class="col-form-label">GRADE</label>
