@@ -22,6 +22,44 @@
 				padding-right : 24px;
 			}
 	  </style>
+	  
+	<style>
+			
+	pre {
+	    font-family: monospace, monospace;
+	    font-size: 1em;
+	}
+	.exposed-filters .form-select {
+	    width: 14em;
+	}
+	button, input, optgroup, select, textarea {
+	    font-family: inherit;
+	    font-size: 100%;
+	    line-height: 1.15;
+	    margin: 0;
+	}
+	
+	button, input {
+	    overflow: visible;
+	}
+	
+	button, select {
+	    text-transform: none;
+	}
+	
+	.blue_box_select {
+		font-family: inherit;
+		font-size: 100%;
+		line-height: 2em;
+		height: 2em;
+		font-family: inherit;
+		font-size: 100%;
+		margin: 0;
+		color: #FFFFFF;
+		text-decoration: none;
+		background-color: #0056b3;
+	}
+	</style>
 	<script> 
 		function searchFramework(item) {
 			let val = item.value.toLowerCase();
@@ -154,59 +192,22 @@
 		  <hr>
       </div>
     </section>
-	  <section>
-	<div class="container" id="frameworkSelector" style="visibility:hidden">
-			  <!-- NGSS interface -->
-		<style>
-				
-		pre {
-		    font-family: monospace, monospace;
-		    font-size: 1em;
-		}
-		.exposed-filters .form-select {
-		    width: 14em;
-		}
-		button, input, optgroup, select, textarea {
-		    font-family: inherit;
-		    font-size: 100%;
-		    line-height: 1.15;
-		    margin: 0;
-		}
-		
-		button, input {
-		    overflow: visible;
-		}
-		
-		button, select {
-		    text-transform: none;
-		}
-		
-		.blue_box_select {
-			font-family: inherit;
-			font-size: 100%;
-			line-height: 2em;
-			height: 2em;
-			font-family: inherit;
-			font-size: 100%;
-			margin: 0;
-			color: #FFFFFF;
-			text-decoration: none;
-			background-color: #0056b3;
-		}
-		</style>
 
-				
-		<form>
-                       
+
+
+
+ <section>
+      <div class="container">
+        <div class="row">
 	<div class="col-12 card bg-light mx-auto">
-     <div class="row">
-			<div class="row col-12">
-			<label  class="col-form-label">Search:&nnbsp;</label>
+              <h5 class="text-center card-header">Next Generation Sciences Standards</h5>
+              <form class="card-body">
+                <div class="form-group row">
+                  	<label  class="col-form-label">Search:&nnbsp;</label>
 			<input id="searchfield" class="form-control" size='80' style='width:100%;color:grey;' value="Enter a keyword or category within the framework." onkeyup="searchFramework(this)" onfocus="this.style.color='black';this.value='';"></input>
-			</div>
-
-			<div class="row col-12">
-			<label  class="col-form-label">GRADE:</label>
+                </div>
+                <div class="form-group row">
+                  <label  class="col-form-label">GRADE:</label>
 			<select class="form-control blue_box_select" name="grade_select" id="grade_select">
 				<option value="98">-- Select Filter --</option>
 				<option value="98">K-2</option>
@@ -220,9 +221,8 @@
 				<option value="106" selected>Middle School (6-8)</option>
 				<option value="107">High School (9-12)</option>
 			</select>
-			</div> 
-		  
-			<div class="row">
+                </div>
+		<div class="form-group row">
 			<label  class="col-form-label">DISCIPLINARY CORE IDEA:</label>
 				<select class="form-control blue_box_select" name="grade_select" id="disciplinary_core_idea_select">
 					<option value="98">-- Select Filter --</option>
@@ -267,11 +267,8 @@
 					<option value="${this}">ETS1A: DEFINING AND DELIMITING AND ENGINEERING PROBLEM</option>
 					<option value="${this}">ETS1B: DEVELOPING POSSIBLE SOLUTIONS</option>
 					<option value="${this}">ETS1C: OPTIMIZING THE DESIGN SOLUTION</option>
-				</select>			
-			</div>
-
-			
-			<div class="row">
+				</select>
+		<div class="form-group row">
 			<label  class="col-form-label">PRACTICE</label>
 			<select class="blue_box_select form-control" name="grade_select" id="grade_select">
 				<option value="98">-- Select Filter --</option>
@@ -284,10 +281,8 @@
 				<option value="114">Engaging in Argument from Evidence</option>
 				<option value="115">Obtaining, Evaluating, and Communicating Information</option>
 			</select>
-			</div>		
-
-			
-			<div class="row">
+                </div>
+		<div class="form-group row">
 			<label  class="col-form-label">DISCIPLINE</label>
 			<select class="blue_box_select" name="grade_select" id="grade_select">
 				<option value="98">-- Select Filter --</option>
@@ -296,10 +291,9 @@
 				<option value="${this}">EARTH AND SPACE SCIENCES</option>
 				<option value="${this}">ENGINEERING, TECHNOLOGY, AND APPLICATIONS OF SCIENCE</option>
 			</select>
-			</div>	
-
-			<div class="row">
-			<label  class="col-form-label">CROSS-CUTTING CONCEPT</label>
+                </div>
+		<div class="form-group row">
+                  	<label  class="col-form-label">CROSS-CUTTING CONCEPT</label>
 			<select class="blue_box_select" name="grade_select" id="grade_select">
 				<option value="98">-- Select Filter --</option>
 				<option value="${this}">PATTERNS</option>
@@ -312,12 +306,15 @@
 				<option value="${this}">INTERDEPENDENCE OF SCIENCE, ENGINEERING, AND TECHNOLOGY</option>
 				<option value="${this}">INFLUENCE OF ENGINEERING, TECHNOLOGY, AND SCIENCE ON SOCIETY AND THE NATURAL WORLD</option>
 			</select>
-			</div>
-			</div>	
-		</form>
-	</div>
-		  
-	  </section>
+                </div>
+                </div>
+
+              </form>
+          </div>
+        </div>
+		  <hr>
+      </div>
+    </section>
 	
 	<hr>
 	  
