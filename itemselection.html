@@ -84,27 +84,7 @@
 		  <hr>
       </div>
     </section>
-	  <!-- TREE -->
 	  <section>
-		  <!--
-		  <div class="container" id="frameworkSelector" style="visibility:hidden">
-			<div class="row">
-				<div class="col-12">
-				  <h4 class="col-12">Select a Competency</h4>
-				  <hr>
-				  <div id="jstree_demo_div">
-				  <ul>
-					  <li id="http://asn.jesandco.org/resources/S2454349" >M-PS2 Motion and Stability: Forces and Interactions
-						  <ul><li id="http://asn.jesandco.org/resources/S2454350" class="jstree-no-checkbox">MS-PS2-1 Apply Newton’s Third Law to design a solution to a problem involving the motion of two colliding objects.*</li>
-							  <li id="http://asn.jesandco.org/resources/S2454351">K-PS2-2 Plan an investigation to provide evidence that the change in an object’s motion depends on the sum of the forces on the object and the mass of the object.</li>
-						  </ul>
-					  </li>
-					</ul>
-				</div>
-				</div>
-			</div>
-		  </div>
-		  -->
 	<div class="container" id="frameworkSelector" style="visibility:hidden">
 			  <!-- NGSS interface -->
 		<style>
@@ -142,8 +122,9 @@
 		}
 		</style>
 		<form>
-			<label>Search: </label>
-			<input size='' style='width:100%' />
+			<label>Search within framework: </label>
+			<input size='80' style='width:100%' />
+			
 			<label>GRADE</label>
 			<select class="blue_box_select" name="grade_select" id="grade_select">
 				<option value="98">K-2</option>
@@ -154,13 +135,13 @@
 				<option value="103">3</option>
 				<option value="104">4</option>
 				<option value="105">5</option>
-				<option value="106">Middle School (6-8)</option>
+				<option value="106" selected>Middle School (6-8)</option>
 				<option value="107">High School (9-12)</option>
 			</select>
 				<br/>
 
 			<label>DISCIPLINARY CORE IDEA</label>
-			<select class="form-select blue_box_button" name="grade_select" id="grade_select">
+			<select class="blue_box_select" name="grade_select" id="grade_select">
 				<option value="${this}">PS1A: STRUCTURE AND PROPERTIES OF MATTER</option>
 				<option value="${this}">PS1B: CHEMICAL REACTIONS</option>
 				<option value="${this}">PS1C: NUCLEAR PROCESSES</option>
