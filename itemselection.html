@@ -73,11 +73,14 @@
 			if (document.getElementById("disciplinary_core_idea_option_PS3B").selected) {
 				showActivitySelector();
 			}
-			setTimeout(thisSelect.blur, 1000);
+			setTimeout(focusOnSearch, 500);
+		}
+		function focusOnSearch() {
+			document.getElementById("searchfield").focus();
 		}
 	</script>
   </head>
-  <body onLoad="showNGSSSearch()">
+  <body>
 	  
 	
     <div class="container mt-3">
