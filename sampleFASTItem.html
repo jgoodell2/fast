@@ -94,7 +94,7 @@ tr:nth-child(2) {
 	
 <script>
 // Global variables
-//Variables use in item content
+//Variables use in item content from template
 const feedbackObjArray = [] ;
 var numHints = 0;
 var currentHint = 0; //hint count
@@ -116,8 +116,6 @@ function hintEvent() {
     //Add code to log hint
     
 }
-
-
 
 function nextItem() {
     // Add logic for next item destination or completion of the activity
@@ -145,13 +143,17 @@ function nextHint() {
     var hintObjectName = "hint" + currentHint;
     document.getElementById(hintObjectName).style.visibility = "visible";
     hintEvent();
-  }
-
+}
+//Initialize variables specific to this item
+feedbackObjArray.push({match: "28/5", matchtype:"exact", feedback:"Correct! &nbsp;&nbsp; <button onclick='nextItem()'>Keep Going</button>"});
+feedbackObjArray.push({match:".", matchtype:"substring", feedback:"Enter the answer as a fraction rather than a decimal number."});
+numHints = 5; //Number of hints
+currentHint = 0; //hint count
 </script>
 </head>
+	
 <body>
-
-  <!-- The learning activity or item is enclosed in a div tag with the id "learningActivity" -->
+  <!-- The learning activity or item is always enclosed in a div tag with the id "learningActivity" -->
   <div id="learningActivity" itemscope itemtype="http://schema.org/CreativeWork">
     <!-- Item Template CSS -->
     <style>
