@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>FAST</title>
+    <!-- Bootstrap -->
+    <link href="./css/bootstrap-4.4.1.css" rel="stylesheet">
+	<!-- JS Tree -->
+    <link rel="stylesheet" href="./jstree/themes/default/style.min.css" />
+	  <style>
+		  .icon{width:2em;height:2em;float:right;}
+		  .jstree-container-ul>li>a>i.jstree-checkbox {display:none}
+		  .jstree-no-checkbox > a > i.jstree-checkbox {display:none;}
+		  .jstree-anchor { 
+				/*enable wrapping*/
+				white-space : normal !important;
+				/*ensure lower nodes move down*/
+				height : auto !important;
+				/*offset icon width*/
+				padding-right : 24px;
+			}
+	  </style>
+	  
+	<style>
+			
+	pre {
+	    font-family: monospace, monospace;
+	    font-size: 1em;
+	}
+	.exposed-filters .form-select {
+	    width: 14em;
+	}
+	button, input, optgroup, select, textarea {
+	    font-family: inherit;
+	    font-size: 100%;
+	    line-height: 1.15;
+	    margin: 0;
+	}
+	
+	button, input {
+	    overflow: visible;
+	}
+	
+	button, select {
+	    text-transform: none;
+	}
+	
+	.blue_box_select {
+		font-family: inherit;
+		font-size: 100%;
+		line-height: 2em;
+		height: 2em;
+		font-family: inherit;
+		font-size: 100%;
+		margin: 0;
+		color: #FFFFFF;
+		text-decoration: none;
+		background-color: #0056b3;
+	}
+	.center {
+	  display: block;
+	  margin-left: auto;
+	  margin-right: auto;
+	  width: 50%;
+	}
+	</style>
+	<script> 
+		function searchFramework(item) {
+			let val = item.value.toLowerCase();
+			if (val=="energy") {
+				document.getElementById("disciplinary_core_idea_option_PS3B").selected = true;
+				showActivitySelector();
+			}
+
+		}
+		function changeFilter(thisSelect) {
+			if (document.getElementById("disciplinary_core_idea_option_PS3B").selected) {
+				showActivitySelector();
+			}
+			setTimeout(focusOnSearch, 500);
+		}
+		function focusOnSearch() {
+			document.getElementById("searchfield").focus();
+		}
+	</script>
+  </head>
+  <body>
+	  
+	
+    <div class="container mt-3">
+      <div class="row">
+        <div class="col-12">
+          <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+              <li data-target="#carouselExampleControls" data-slide-to="0" class="active"></li>
+            </ol>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img class="center" src="./images/FASTlogo2.png" alt="First slide"> 
+                <div class="carousel-caption d-none d-md-block">
+                  <h5></h5>
+                  <p></p>
+                </div>
+              </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+            </a>
+		     
+          </div>
+        </div>
+      </div>
+      <hr>
+    </div>
+    <section>
+      <div class="container">
+	 <div class="row">
+			<div class="col-12 mx-auto" style="height: 3em;">
+				<div style="float: right;"><image src="./images/user_profile_icon.png" class="icon" style="width:3em;height:3em;"></image></div>
+			</div>
+	 </div>
+        <div class="row">
+	<div class="col-12 card bg-light mx-auto">
+              <h5 class="text-center card-header">Academic Standard or Curriculum Framework</h5>
+              <form class="card-body">
+                <div class="form-group row">
+                  <label for="location1" class="col-form-label">State</label>
+                  <select class="form-control" name="location" id="jurisdiction">
+					<option value="">-- Select One --</option>
+                    	<option value="">Multistate</option>
+			<option value="AL">Alabama</option>
+			<option value="AK">Alaska</option>
+			<option value="AZ">Arizona</option>
+			<option value="AR">Arkansas</option>
+			<option value="CA" selected>California</option>
+			<option value="CO">Colorado</option>
+			<option value="CT">Connecticut</option>
+			<option value="DE">Delaware</option>
+			<option value="DC">District Of Columbia</option>
+			<option value="FL">Florida</option>
+			<option value="GA">Georgia</option>
+			<option value="HI">Hawaii</option>
+			<option value="ID">Idaho</option>
+			<option value="IL">Illinois</option>
+			<option value="IN">Indiana</option>
+			<option value="IA">Iowa</option>
+			<option value="KS">Kansas</option>
+			<option value="KY">Kentucky</option>
+			<option value="LA">Louisiana</option>
+			<option value="ME">Maine</option>
+			<option value="MD">Maryland</option>
+			<option value="MA">Massachusetts</option>
+			<option value="MI">Michigan</option>
+			<option value="MN">Minnesota</option>
+			<option value="MS">Mississippi</option>
+			<option value="MO">Missouri</option>
+			<option value="MT">Montana</option>
+			<option value="NE">Nebraska</option>
+			<option value="NV">Nevada</option>
+			<option value="NH">New Hampshire</option>
+			<option value="NJ">New Jersey</option>
+			<option value="NM">New Mexico</option>
+			<option value="NY">New York</option>
+			<option value="NC">North Carolina</option>
+			<option value="ND">North Dakota</option>
+			<option value="OH">Ohio</option>
+			<option value="OK">Oklahoma</option>
+			<option value="OR">Oregon</option>
+			<option value="PA">Pennsylvania</option>
+			<option value="RI">Rhode Island</option>
+			<option value="SC">South Carolina</option>
+			<option value="SD">South Dakota</option>
+			<option value="TN">Tennessee</option>
+			<option value="TX">Texas</option>
+			<option value="UT">Utah</option>
+			<option value="VT">Vermont</option>
+			<option value="VA">Virginia</option>
+			<option value="WA">Washington</option>
+			<option value="WV">West Virginia</option>
+			<option value="WI">Wisconsin</option>
+			<option value="WY">Wyoming</option>
+
+                  </select>
+                </div>
+                <div class="form-group row">
+                  <label for="location1" class="col-form-label">Framework</label>
+                  <select class="form-control" name="location" id="framework" onChange="showFramework()">
+			<option>-- Select One --</option>
+			  <option id="NGSS" value="NGSS" selected>California Next Generation Sciences Standards</option>
+			<option>Common Core State Standards for English Language Arts</option>
+		 	<option>Common Core State Standards for Mathematics</option>
+			
+                  </select>
+                </div>
+
+                <!--p class="text-center"><a href="#" class="btn btn-danger" role="button">Search </a></p-->
+              </form>
+          </div>
+        </div>
+		  <hr>
+      </div>
+    </section>
+
+
+
+
+ <section id="NGSS_filter">
+      <div class="container">
+        <div class="row">
+	<div class="col-12 card bg-light mx-auto">
+              <h5 class="text-center card-header">Next Generation Sciences Standards</h5>
+              <form class="card-body">
+                <div class="form-group row">
+                  	<label  class="col-form-label">Search:</label>
+			<input id="searchfield" class="form-control" size='80' style='width:100%;color:grey;' value="Enter a keyword or category within the framework." onkeyup="searchFramework(this)" onfocus="this.style.color='black';this.value='';"></input>
+                </div>
+                <div class="form-group row">
+                  <label  class="col-form-label">GRADE:</label>
+			<select class="form-control blue_box_select" name="grade_select" id="grade_select">
+				<option value="98">-- Select Filter --</option>
+				<option value="98">K-2</option>
+				<option value="99">K</option>
+				<option value="100">1</option>
+				<option value="101">2</option>
+				<option value="102">3-5</option>
+				<option value="103">3</option>
+				<option value="104">4</option>
+				<option value="105">5</option>
+				<option value="106" selected>Middle School (6-8)</option>
+				<option value="107">High School (9-12)</option>
+			</select>
+                </div>
+		<div class="form-group row">
+			<label  class="col-form-label">DISCIPLINARY CORE IDEA:</label>
+				<select class="form-control blue_box_select" name="grade_select" id="disciplinary_core_idea_select" onchange="changeFilter(this);">
+					<option value="98">-- Select Filter --</option>
+					<option value="${this}">PS1A: STRUCTURE AND PROPERTIES OF MATTER</option>
+					<option value="${this}">PS1B: CHEMICAL REACTIONS</option>
+					<option value="${this}">PS1C: NUCLEAR PROCESSES</option>
+					<option value="${this}">PS2A: FORCES AND MOTION</option>
+					<option value="${this}">PS2B: TYPES OF INTERACTIONS</option>
+					<option value="${this}">PS3A: DEFINITIONS OF ENERGY</option>
+					<option value="${this}" id="disciplinary_core_idea_option_PS3B">PS3B: CONSERVATION OF ENERGY AND ENERGY TRANSFER</option>
+					<option value="${this}">PS3C: RELATIONSHIP BETWEEN ENERGY AND FORCES</option>
+					<option value="${this}">PS3D: ENERGY IN CHEMICAL PROCESSES AND EVERYDAY LIFE</option>
+					<option value="${this}">PS4A: WAVE PROPERTIES</option>
+					<option value="${this}">PS4B: ELECTROMAGNETIC RADIATION</option>
+					<option value="${this}">PS4C: INFORMATION TECHNOLOGIES AND INSTRUMENTATION</option>
+					<option value="${this}">LS1A: STRUCTURE AND FUNCTION</option>
+					<option value="${this}">LS1B: GROWTH AND DEVELOPMENT OF ORGANISMS</option>
+					<option value="${this}">LS1C: ORGANIZATION FOR MATTER AND ENERGY FLOW IN ORGANISMS</option>
+					<option value="${this}">LS1D: INFORMATION PROCESSING</option>
+					<option value="${this}">LS2A: INTERDEPENDENT RELATIONSHIPS IN ECOSYSTEMS</option>
+					<option value="${this}">LS2B: CYCLES OF MATTER AND ENERGY TRANSFER IN ECOSYSTEMS</option>
+					<option value="${this}">LS2C: ECOSYSTEMS DYNAMICS, FUNCTIONING AND RESILIENCE</option>
+					<option value="${this}">LS2D: SOCIAL INTERACTIONS AND GROUP BEHAVIOR</option>
+					<option value="${this}">LS3A: INHERITANCE OF TRAITS</option>
+					<option value="${this}">LS3B: VARIATION OF TRAITS</option>
+					<option value="${this}">LS4A: EVIDENCE OF COMMON ANCESTRY AND DIVERSITY</option>
+					<option value="${this}">LS4B: NATURAL SELECTION</option>
+					<option value="${this}">LS4C: ADAPTATION</option>
+					<option value="${this}">LS4D: BIODIVERSITY AND HUMANS</option>
+					<option value="${this}">ESS1A: THE UNIVERSE AND ITS STARS</option>
+					<option value="${this}">ESS1B: EARTH AND THE SOLAR SYSTEM</option>
+					<option value="${this}">ESS1C: THE HISTORY OF PLANET EARTH</option>
+					<option value="${this}">ESS2A: EARTH MATERIALS AND SYSTEMS</option>
+					<option value="${this}">ESS2B: PLATE TECTONICS AND LARGE-SCALE SYSTEMS</option>
+					<option value="${this}">ESS2C: THE ROLE OF WATER IN EARTH’S SURFACE PROCESSES</option>
+					<option value="${this}">ESS2D: WEATHER AND CLIMATE</option>
+					<option value="${this}">ESS2E: BIOGEOLOGY</option>
+					<option value="${this}">ESS3A: NATURAL RESOURCES</option>
+					<option value="${this}">ESS3B: NATURAL HAZARDS</option>
+					<option value="${this}">ESS3C: HUMAN IMPACTS ON EARTH SYSTEMS</option>
+					<option value="${this}">ESS3D: GLOBAL CLIMATE CHANGE</option>
+					<option value="${this}">ETS1A: DEFINING AND DELIMITING AND ENGINEERING PROBLEM</option>
+					<option value="${this}">ETS1B: DEVELOPING POSSIBLE SOLUTIONS</option>
+					<option value="${this}">ETS1C: OPTIMIZING THE DESIGN SOLUTION</option>
+				</select>
+		</div>
+		<div class="form-group row">
+			<label  class="col-form-label">PRACTICE</label>
+			<select class="form-control blue_box_select" name="grade_select" id="grade_select">
+				<option value="98">-- Select Filter --</option>
+				<option value="108">Asking Questions and Defining Problems</option>
+				<option value="109">Developing and Using Models</option>
+				<option value="110">Planning and Carrying Out Investigations</option>
+				<option value="111">Analyzing and Interpreting Data</option>
+				<option value="112">Using Mathematics and Computational Thinking</option>
+				<option value="113">Constructing Explanations and Designing Solutions</option>
+				<option value="114">Engaging in Argument from Evidence</option>
+				<option value="115">Obtaining, Evaluating, and Communicating Information</option>
+			</select>
+                </div>
+		<div class="form-group row">
+			<label  class="col-form-label">DISCIPLINE</label>
+			<select class="form-control blue_box_select" name="grade_select" id="grade_select">
+				<option value="98">-- Select Filter --</option>
+				<option value="${this}">PHYSICAL SCIENCES</option>
+				<option value="${this}">LIFE SCIENCES</option>
+				<option value="${this}">EARTH AND SPACE SCIENCES</option>
+				<option value="${this}">ENGINEERING, TECHNOLOGY, AND APPLICATIONS OF SCIENCE</option>
+			</select>
+                </div>
+		<div class="form-group row">
+                  	<label  class="col-form-label">CROSS-CUTTING CONCEPT</label>
+			<select class="form-control blue_box_select" name="grade_select" id="grade_select">
+				<option value="98">-- Select Filter --</option>
+				<option value="${this}">PATTERNS</option>
+				<option value="${this}">CAUSE AND EFFECT</option>
+				<option value="${this}">SCALE, PROPORTION, AND QUANTITY</option>
+				<option value="${this}">SYSTEMS AND SYSTEM MODELS</option>
+				<option value="${this}">ENERGY AND MATTER</option>
+				<option value="${this}">STRUCTURE AND FUNCTION</option>
+				<option value="${this}">STABILITY AND CHANGE</option>
+				<option value="${this}">INTERDEPENDENCE OF SCIENCE, ENGINEERING, AND TECHNOLOGY</option>
+				<option value="${this}">INFLUENCE OF ENGINEERING, TECHNOLOGY, AND SCIENCE ON SOCIETY AND THE NATURAL WORLD</option>
+			</select>
+                </div>
+                </div>
+
+              </form>
+          </div>
+        </div>
+		  <hr>
+      </div>
+    </section>
+	
+	<hr>
+	  
+    <section>
+	    
+    <div class="container" id="activitySelector" style="visibility:hidden">
+      <div class="row">
+        <div class="col-12">
+		<div><a href="#">filter by learner variability strategy</a></div>
+		<div style="float:right"><a href="#">Bookmark this Search <image src="./images/bookmark.png" class="icon"></image></a></div>
+		  <h4>Select Activity Type</h4>
+          <hr>
+          <div class="row">
+            <div class="col-sm-6 col-md-6 col-lg-6 col-12">
+              <div class="card">
+                <img class="card-img-top" src="./images/city_country_tile_300x200.png" alt="Card image cap"><!-- GIF similar to 1st 8 seconds of this? https://www.youtube.com/watch?v=JZshZp-cxKg -->
+                <div class="card-body">
+                  <h5 class="card-title">Heat Transfer Mini-Lab (City or Country)</h5>
+                  <p class="card-text">This choose-your-adventure activity lets students compare options for reducing heat loss and explaining why one option is best.</p>
+                  <a href="#" class="btn btn-primary">Assign</a>&nbsp;&nbsp;<a href="#" class="btn btn-primary">Try</a><div style="float:right">Share&nbsp; <image src="./images/share.png" class="icon"></image></div>
+			    
+				  <div id="accordion1" role="tablist" style="margin: 1px;">
+				    <div class="card">
+				      <div class="card-header" role="tab" id="headingOne1">
+				        <h5 class="mb-0"> <a data-toggle="collapse" href="#collapseOne1" role="button" aria-expanded="true" aria-controls="collapseOne1">Targeted Universal Deisgn Features <img class="icon" src="./images/accessibility2.png" alt="Accessibility Info"></a> </h5>
+			          </div>
+				      <div id="collapseOne1" class="collapse" role="tabpanel" aria-labelledby="headingOne1" data-parent="#accordion1">
+				        <div class="card-body">
+						  <h4>ACCESS</h4>
+This item includes the following accessibility features:
+							<ul><li>WCAG Compliance</li><li>508 Compliance</li><li>Spanish Translation</li></ul>.
+<h3>ACHIEVEMENT</h3>
+Scaffolded content and feedback so that students at all levels can learn and pratice the targeted physical sciences concepts. Data may be collected from the interactions with the item to predict performance on simular activities and assessments.
+<h3>IDENTITY</h3>
+Varriations of item have been generated to address culturally relevant names based on geography and demographics.
+<h3>POWER</h3>
+Students are given choice and voice over how they do the activity. There are multiple decision points at which the learner chooses what to do next. 
+							<h3>Engagement</h3>
+Student try different options to explore which is best.
+							<h3>Learning Sciences</h3>
+The following learning sciences concepts are applied in this activity:
+							<ul><li><a href="">Doer Effect</a></li><li><a href="">Zone of Proximal Development</a></li><li><a href="">Deliberate Practice</a></li></ul>
+						  </div>
+			          </div>
+			        </div>
+				    <div class="card">
+				      <div class="card-header" role="tab" id="headingTwo1">
+				        <h5 class="mb-0"> <a class="collapsed" data-toggle="collapse" href="#collapseTwo1" role="button" aria-expanded="false" aria-controls="collapseTwo1">Item Details</a> </h5>
+			          </div>
+				      <div id="collapseTwo1" class="collapse" role="tabpanel" aria-labelledby="headingTwo1" data-parent="#accordion1">
+				        <div class="card-body">Content for Accordion Panel 2</div>
+			          </div>
+			        </div>
+			      </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-6 col-lg-6 col-12">
+              <div class="card">
+                <img class="card-img-top" src="./images/fox_den_tile_200x300.png" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">Heat Transfer - Fox Den / Gopher Hole Mini-Lab</h5>
+                  <p class="card-text">This choose-your-adventure activity lets students compare options for reducing heat loss and explaining why one option is best.</p>
+                  <a href="#" class="btn btn-primary">Assign</a>&nbsp;&nbsp;<a href="#" class="btn btn-primary">Try</a><div style="float:right">Share&nbsp; <image src="./images/share.png" class="icon"></image></div>
+			     
+				  <div id="accordion2" role="tablist" style="margin: 1px;">
+				    <div class="card">
+				      <div class="card-header" role="tab" id="headingOne2">
+				        <h5 class="mb-0"> <a data-toggle="collapse" href="#collapseOne1" role="button" aria-expanded="true" aria-controls="collapseOne1">Targeted Universal Deisgn Features <img class="icon" src="./images/accessibility2.png" alt="Accessibility Info"></a> </h5>
+			          </div>
+				      <div id="collapseOne2" class="collapse" role="tabpanel" aria-labelledby="headingOne1" data-parent="#accordion1">
+				        <div class="card-body">
+						  <h4>ACCESS</h4>
+This item includes the following accessibility features:
+							<ul><li>508 Compliance</li><li>Spanish Translation</li></ul>.
+<h3>ACHIEVEMENT</h3>
+Scaffolded content and feedback so that students at all levels can learn and pratice the targeted physical sciences concepts. Data may be collected from the interactions with the item to predict performance on simular activities and assessments.
+<h3>IDENTITY</h3>
+Varriations of item have been generated to address culturally relevant names based on geography and demographics.
+<h3>POWER</h3>
+Students are given choice and voice over how they do the activity. There are multiple decision points at which the learner chooses what to do next. 
+							<h3>Engagement</h3>
+In addition to the engagement elements of the of the power dimension. The item has been designed to give engaging feedback in the form of...
+							<h3>Learning Sciences</h3>
+The following learning sciences concepts are applied in this activity:
+							<ul><li><a href="">Doer Effect</a></li<li><a href="">Zone of Proximal Development</a></li><li><a href="">Deliberate Practice</a></li></ul>
+						  </div>
+			          </div>
+					  </div>
+					  <div class="card">
+				      <div class="card-header" role="tab" id="headingTwo1">
+				        <h5 class="mb-0"> <a class="collapsed" data-toggle="collapse" href="#collapseTwo1" role="button" aria-expanded="false" aria-controls="collapseTwo1">Item Details</a> </h5>
+			          </div>
+				      <div id="collapseTwo1" class="collapse" role="tabpanel" aria-labelledby="headingTwo1" data-parent="#accordion1">
+				        <div class="card-body">Content for Accordion Panel 2</div>
+			          </div>
+			        </div>
+			      </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-6 col-md-6 col-lg-6 col-12">
+              <div class="card">
+                <img class="card-img-top" src="./images/bird_nest_tile_200x300.png" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">Explore Heat Transfer Concepts that Keep a Bird's Nest Warm</h5>
+                  <p class="card-text">This choose-your-adventure activity lets students compare options for reducing heat loss and explaining why one option is best.</p>
+                  <a href="#" class="btn btn-primary">Assign</a>&nbsp;&nbsp;<a href="#" class="btn btn-primary">Try</a><div style="float:right">Share&nbsp; <image src="./images/share.png" class="icon"></image></div>
+			<div id="accordion2" role="tablist" style="margin: 1px;">
+				    <div class="card">
+				      <div class="card-header" role="tab" id="headingOne2">
+				        <h5 class="mb-0"> <a data-toggle="collapse" href="#collapseOne1" role="button" aria-expanded="true" aria-controls="collapseOne1">Targeted Universal Deisgn Features <img class="icon" src="./images/accessibility2.png" alt="Accessibility Info"></a> </h5>
+			          </div>
+				      <div id="collapseOne2" class="collapse" role="tabpanel" aria-labelledby="headingOne1" data-parent="#accordion1">
+				        <div class="card-body">
+						  <h4>ACCESS</h4>
+This item includes the following accessibility features:
+							<ul><li>508 Compliance</li><li>Spanish Translation</li></ul>.
+<h3>ACHIEVEMENT</h3>
+Scaffolded content and feedback so that students at all levels can learn and pratice the targeted physical sciences concepts. Data may be collected from the interactions with the item to predict performance on simular activities and assessments.
+<h3>IDENTITY</h3>
+Varriations of item have been generated to address culturally relevant names based on geography and demographics.
+<h3>POWER</h3>
+Students are given choice and voice over how they do the activity. There are multiple decision points at which the learner chooses what to do next. 
+							<h3>Engagement</h3>
+In addition to the engagement elements of the of the power dimension. The item has been designed to give engaging feedback in the form of...
+							<h3>Learning Sciences</h3>
+The following learning sciences concepts are applied in this activity:
+							<ul><li><a href="">Doer Effect</a></li<li><a href="">Zone of Proximal Development</a></li><li><a href="">Deliberate Practice</a></li></ul>
+						  </div>
+			          </div>
+					  </div>
+					  <div class="card">
+				      <div class="card-header" role="tab" id="headingTwo1">
+				        <h5 class="mb-0"> <a class="collapsed" data-toggle="collapse" href="#collapseTwo1" role="button" aria-expanded="false" aria-controls="collapseTwo1">Item Details</a> </h5>
+			          </div>
+				      <div id="collapseTwo1" class="collapse" role="tabpanel" aria-labelledby="headingTwo1" data-parent="#accordion1">
+				        <div class="card-body">Content for Accordion Panel 2</div>
+			          </div>
+			        </div>
+			      </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-6 col-lg-6 col-12">
+              <div class="card">
+                <img class="card-img-top" src="./images/desert_tile_200x300.png" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">Explore Heat Transfer to Stay Cool in a Desert Home</h5>
+                  <p class="card-text">In this choose-your-adventure activity, students will explore the principles of heat transfer in hot, arid climates. They'll learn how people use scientific principles to keep their homes comfortably cool.</p>
+                  <a href="#" class="btn btn-primary">Assign</a>&nbsp;&nbsp;<a href="#" class="btn btn-primary">Try</a><div style="float:right">Share&nbsp; <image src="./images/share.png" class="icon"></image></div>
+			<div id="accordion2" role="tablist" style="margin: 1px;">
+				    <div class="card">
+				      <div class="card-header" role="tab" id="headingOne2">
+				        <h5 class="mb-0"> <a data-toggle="collapse" href="#collapseOne1" role="button" aria-expanded="true" aria-controls="collapseOne1">Targeted Universal Deisgn Features <img class="icon" src="./images/accessibility2.png" alt="Accessibility Info"></a> </h5>
+			          </div>
+				      <div id="collapseOne2" class="collapse" role="tabpanel" aria-labelledby="headingOne1" data-parent="#accordion1">
+				        <div class="card-body">
+						  <h4>ACCESS</h4>
+This item includes the following accessibility features:
+							<ul><li>508 Compliance</li><li>Spanish Translation</li></ul>.
+<h3>ACHIEVEMENT</h3>
+Scaffolded content and feedback so that students at all levels can learn and pratice the targeted physical sciences concepts. Data may be collected from the interactions with the item to predict performance on simular activities and assessments.
+<h3>IDENTITY</h3>
+Varriations of item have been generated to address culturally relevant names based on geography and demographics.
+<h3>POWER</h3>
+Students are given choice and voice over how they do the activity. There are multiple decision points at which the learner chooses what to do next. 
+							<h3>Engagement</h3>
+In addition to the engagement elements of the of the power dimension. The item has been designed to give engaging feedback in the form of...
+							<h3>Learning Sciences</h3>
+The following learning sciences concepts are applied in this activity:
+							<ul><li><a href="">Doer Effect</a></li<li><a href="">Zone of Proximal Development</a></li><li><a href="">Deliberate Practice</a></li></ul>
+						  </div>
+			          </div>
+					  </div>
+					  <div class="card">
+				      <div class="card-header" role="tab" id="headingTwo1">
+				        <h5 class="mb-0"> <a class="collapsed" data-toggle="collapse" href="#collapseTwo1" role="button" aria-expanded="false" aria-controls="collapseTwo1">Item Details</a> </h5>
+			          </div>
+				      <div id="collapseTwo1" class="collapse" role="tabpanel" aria-labelledby="headingTwo1" data-parent="#accordion1">
+				        <div class="card-body">Content for Accordion Panel 2</div>
+			          </div>
+			        </div>
+			      </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr>
+      </div>
+    </div>
+    </section>
+	  
+    <hr>
+    
+    <footer class="text-center">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <p>Copyright © 2023 QIP FAST. All rights reserved.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="./js/jquery-3.4.1.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="./js/popper.min.js"></script>
+    <script src="./js/bootstrap-4.4.1.js"></script>
+	  
+<!--script>
+// GET NGSS from ASN
+	function getFramework() {
+	$.ajax({
+    url: "https://asnstaticd2l.s3.amazonaws.com/data/rdf/D2454348.json",
+    type: 'GET',
+    cache: false,
+	dataType: 'text',
+    success: function(result) {
+        //  alert(jQuery.dataType);
+        if (result) {
+					const data = JSON.parse(result);
+            //  var dd = JSON.parse(result);
+            alert(result);
+			alert(data[0].length);
+        }
+
+    },
+    error: function() {
+        alert("Framework not loaded.");
+    }
+});
+	}
+</script-->
+  <script>
+	  function showActivitySelector() {
+	  	document.getElementById("activitySelector").style.visibility = "visible";
+		document.getElementById('NGSS_filter').scrollIntoView();
+	  }
+  </script>
+	  
+  <script src="./jstree/jstree.min.js"></script>	  
+  <script src="./js/jstree.checkbox.js"></script>
+  <script>
+	$( document ).ready(function() {
+		console.log( "setting up jstree..." );
+		$(function () { $('#jstree_demo_div').jstree({
+			"plugins" : [ "checkbox" ],
+			"checkbox": {
+                "three_state": true,
+                "whole_node": true,
+                "keep_selected_style": false,
+                "tie_selection": true
+
+            }
+		});
+		$('#jstree_demo_div').on("changed.jstree", function (e, data) {console.log(data.selected);showActivitySelector();});
+	}); });
+  </script>
+  </body>
+</html>
