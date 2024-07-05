@@ -1,13 +1,21 @@
 
-        <form action="/action_page.php">
-            <p class="mult-choice-question">With data, the term "variable" means:</p>
-            <input type="radio" id="option1" name="fav_language" value="HTML">
-            <label class="ctat-multchoice-option" for="html">A fixed number that cannot be changed.</label><br>
-            <input type="radio" id="option2" name="fav_language" value="HTML">
-            <label for="html">A characteristic, number, or quantity that can be measured or counted or a data item that may take on more than one value.</label><br>
-            <input type="radio" id="option3" name="fav_language" value="HTML">
-            <label for="html">An undefined term used only in specific circumstances.</label><br>
-            <input type="radio" id="option1" name="fav_language" value="HTML">
-            <label for="html">A random selection of data points that randomly change over time.</label><br>
-        </form>
+<form>
+        <p class="mult-choice-question">With data, the term "variable" means:</p>
+        <label class="container">A fixed number that cannot be changed.
+                <input type="radio" checked="checked" name="radio1" answered="A fixed number that cannot be changed.">
+                <span class="checkmark"></span>
+        </label>
+        <label class="container">A characteristic, number, or quantity that can be measured or counted or a data item that may take on more than one value.
+                <input type="radio" checked="checked" name="radio2" answered="A characteristic, number, or quantity that can be measured or counted or a data item that may take on more than one value.">
+                <span class="checkmark"></span>
+        </label>
+                <label class="container">An undefined term used only in specific circumstances.
+                <input type="radio" checked="checked" name="radio3" answered="An undefined term used only in specific circumstances.">
+                <span class="checkmark"></span>
+        </label>
+        <label class="container">A random selection of data points that randomly change over time.
+                <input type="radio" checked="checked" name="radio4" answered="A random selection of data points that randomly change over time.">
+                <span class="checkmark"></span>
+        </label>
+</form>
 
