@@ -2,7 +2,7 @@
 /* Multiple choice item with custom radio button */
   /* Stem */
   .fast-item-stem {
-    font-size: 22px;
+    font-size: 16px;
   }
   /* The container */
   .fast-radio-container {
@@ -11,7 +11,7 @@
     padding-left: 35px;
     margin-bottom: 12px;
     cursor: pointer;
-    font-size: 22px;
+    font-size: 16px;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
