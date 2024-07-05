@@ -1,6 +1,6 @@
 <style>
 /* The container */
-fast.radio.container {
+fast-radio-container {
   display: block;
   position: relative;
   padding-left: 35px;
@@ -14,14 +14,14 @@ fast.radio.container {
 }
 
 /* Hide the browser's default radio button */
-fast.radio.container input {
+fast-radio-container input {
   position: absolute;
   opacity: 0;
   cursor: pointer;
 }
 
 /* Create a custom radio button */
-fast.radio.container.checkmark {
+fast-radio-container.checkmark {
   position: absolute;
   top: 0;
   left: 0;
@@ -32,29 +32,29 @@ fast.radio.container.checkmark {
 }
 
 /* On mouse-over, add a grey background color */
-fast.radio.container:hover input ~ .checkmark {
+fast-radio-container:hover input ~ .checkmark {
   background-color: #ccc;
 }
 
 /* When the radio button is checked, add a blue background */
-fast.radio.container input:checked ~ .checkmark {
+fast-radio-container input:checked ~ .checkmark {
   background-color: #2196F3;
 }
 
 /* Create the indicator (the dot/circle - hidden when not checked) */
-fast.radio.container.checkmark:after {
+fast-radio-container.checkmark:after {
   content: "";
   position: absolute;
   display: none;
 }
 
 /* Show the indicator (dot/circle) when checked */
-fast.radio.container input:checked ~ .checkmark:after {
+fast-radio-container input:checked ~ .checkmark:after {
   display: block;
 }
 
 /* Style the indicator (dot/circle) */
-fast.radio.container .checkmark:after {
+fast-radio-container .checkmark:after {
  	top: 9px;
 	left: 9px;
 	width: 8px;
@@ -65,19 +65,19 @@ fast.radio.container .checkmark:after {
 </style>
 
 <p class="multiple-choice-stem" style="font-weight:bold;">With data, the term "variable" means:</p>
-<label class="fast.radio.container">A fixed number that cannot be changed.
+<label class="fast-radio-container">A fixed number that cannot be changed.
 	<input type="radio" name="radio" answered="A fixed number that cannot be changed.">
 	<span class="checkmark"></span>
 </label>
-<label class="fast.radio.container">A characteristic, number, or quantity that can be measured or counted or a data item that may take on more than one value.
+<label class="fast-radio-container">A characteristic, number, or quantity that can be measured or counted or a data item that may take on more than one value.
 	<input type="radio" name="radio" answered="A characteristic, number, or quantity that can be measured or counted or a data item that may take on more than one value.">
 	<span class="checkmark"></span>
 </label>
-<label class="fast.radio.container">An undefined term used only in specific circumstances.
+<label class="fast-radio-container">An undefined term used only in specific circumstances.
 	<input type="radio" name="radio" answered="An undefined term used only in specific circumstances.">
 	<span class="checkmark"></span>
 </label>
-<label class="fast.radio.container">A random selection of data points that randomly change over time.
+<label class="fast-radio-container">A random selection of data points that randomly change over time.
 	<input type="radio" name="radio" answered="A random selection of data points that randomly change over time.">
 	<span class="checkmark"></span>
 </label>
