@@ -132,7 +132,7 @@
     
     <!-- GDPR Consent -->
     <div class="cookie-consent" id="cookieConsent">
-        <p>This application uses necessary cookies and your learning experinces to support your learning accross practice sessions. No personaly identifyable information is collected. By accepting, you consent to this necesary data use.</p>
+        <p>This application uses necessary cookies and your learning experinces data to support your learning accross practice sessions. No personaly identifyable information is collected. By accepting, you consent to this necesary data use.</p>
         <button class="accept-btn" onclick="acceptCookies()">Accept</button>
     </div>
     <style>
@@ -196,7 +196,7 @@
 
         function removeCookieConsent() {
             deleteCookie('userConsent');
-            alert('Cookie consent has been removed.');
+            alert('Cookie consent has been removed and the cookie linking experince data cleared.');
         }
 
         window.onload = function() {
