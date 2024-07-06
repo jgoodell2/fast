@@ -69,7 +69,6 @@
         var items = ["./items/data-visualization-0000000000.html","./items/data-visualization-0000000000.html","./items/data-visualization-0000000000.html","./items/data-visualization-0000000000.html","./items/data-visualization-0000000000.html"];
         var currentItemIndex = 0;
         function loadNextItem() {
-            currentItem++;
             if (currentItemIndex<items.length-1) {
                 // Load item metadata
                 primaryButton.onClick = "evaluateAnswer()";
@@ -88,7 +87,10 @@
             
             // Update feedback
 
-            // Wait for continue
+            // If incorrect have the learner try again
+
+            // If correct set up then next item & Wait for continue
+            currentItemIndex++;
             loadNextItem();
         }
     </script>
