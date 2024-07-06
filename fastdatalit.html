@@ -29,10 +29,10 @@
                     <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
+                    <a class="nav-link disabled" href="#">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link disabled" href="#">Disabled</a>
+                    <a class="nav-link" href="#" onclick="removeCookieConsent()">Clear Data</a>
                 </li>
             </ul>
         </div>
@@ -177,6 +177,10 @@
             document.cookie = name + "=" + (value || "")  + expires + "; path=/";
         }
 
+        function deleteCookie(name) {
+            document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        }
+
         function generateUUID() {
             return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
                 let r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
@@ -188,6 +192,11 @@
             let uuid = generateUUID();
             setCookie('userConsent', uuid, 365);
             document.getElementById('cookieConsent').style.display = 'none';
+        }
+
+        function removeCookieConsent() {
+            deleteCookie('userConsent');
+            alert('Cookie consent has been removed.');
         }
 
         window.onload = function() {
