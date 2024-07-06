@@ -197,6 +197,7 @@
         function removeCookieConsent() {
             deleteCookie('userConsent');
             alert('Cookie consent has been removed and the cookie linking experince data cleared.');
+            document.getElementById('cookieConsent').style.display = 'block';
         }
 
         window.onload = function() {
