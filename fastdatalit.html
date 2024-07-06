@@ -73,13 +73,13 @@
             if (currentItemIndex<items.length-1) {
                 console.log(currentItemIndex);
                 // Load item metadata
-                $("#primaryButton").click = "evaluateAnswer();";
+                $("#primaryButton").click(evaluateAnswer);
                 $("#dynamic-content").load(items[currentItemIndex]);
                 $("#primaryButton").html("Answer");
             } else {
                 currentItemIndex = 0; 
                 // Add loading a new random or data informed items set
-                $("#primaryButton").click = "loadNextItem()";
+                $("#primaryButton").click(loadNextItem);
                 $("#dynamic-content").html("Let's practice data literacy!");
                 $("#primaryButton").html("Practice");
             }
