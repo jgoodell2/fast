@@ -71,6 +71,7 @@
         var currentItemIndex = 0;
         function loadNextItem() {
             console.log("In loadNextItem.");
+            $("#feedback").html("");
             if (currentItemIndex<items.length) {
                 console.log(currentItemIndex);
                 var progressStyle = " " + (currentItemIndex+1)/items.length*100 + "%";
@@ -113,17 +114,18 @@
                 });
             }); 
             // Update feedback
-            var feedback = "Try again. ";
+            var feedback = "";
 
             if (correct===true) {
                 feedback="Right! ";
                 currentItemIndex++;
+                $("#primaryButton").html("Continue");
             } else {
-                // Ckear the selection?
+                $("#primaryButton").html("Try Again");
             }
             feedback+=$("#itemspec").data("feedback");
             $("#feedback").html(feedback);
-            loadNextItem();
+            $("#primaryButton").off("click").on("click", loadNextItem);
         }
     </script>
 </body>
