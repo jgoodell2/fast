@@ -78,8 +78,8 @@
                 $("#dynamic-content").load(items[currentItemIndex]);
                 $("#primaryButton").html("Answer");
                 //Update progress bar
-                var progressStyle = "width: " + (currentItemIndex+1)/items.length*100 + "%";
-                $("progress-bar").style(progressStyle);
+                var progressStyle = "" + (currentItemIndex+1)/items.length*100 + "%";
+                $("progress-bar").css('width', progressStyle);
             } else {
                 console.log(currentItemIndex);
                 console.log("main page");
