@@ -71,6 +71,7 @@
         function loadNextItem() {
             console.log("In loadNextItem.");
             if (currentItemIndex<items.length-1) {
+                console.log("Loading item.");
                 // Load item metadata
                 $("#primaryButton").click = "evaluateAnswer();";
                 $("#dynamic-content").load(items[currentItemIndex]);
