@@ -102,7 +102,7 @@
                 $(this).children('input').each(function() 
                 {
                     if ($(this).prop('checked')) {
-                        if ($(this).data('answered') = $("#itemspec").data("correctvalue")) {
+                        if ($(this).data('answered') === $("#itemspec").data("correctvalue")) {
                             correct=true;
                             console.log($(this).data('answered'));
                         }
@@ -114,14 +114,15 @@
             }); 
             // Update feedback
             var feedback = "Try again. ";
-            if (correct=true) {feedback="Right! ";}
-            feedback+=$("#itemspec").data("feedback")
-            $("#feedback").html(feedback);
-            if (correct) {
+
+            if (correct===true) {
+                feedback="Right! ";
                 currentItemIndex++;
             } else {
                 // Ckear the selection?
             }
+            feedback+=$("#itemspec").data("feedback");
+            $("#feedback").html(feedback);
             loadNextItem();
         }
     </script>
