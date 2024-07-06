@@ -104,11 +104,11 @@
                     if ($(this).prop('checked')) {
                         if ($(this).data('answered') == $("#itemspec").data("correctvalue")) {
                             correct=true;
-                            console.log($(this).prop('answered'));
+                            console.log($(this).data('answered'));
                         }
                     }
                     console.log($(this).prop('checked')); 
-                    console.log($(this).data('answered'));
+                    //console.log($(this).data('answered'));
                     
                 });
             }); 
