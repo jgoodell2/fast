@@ -48,7 +48,7 @@
         <div class="jumbotron">
             <link href="./css/fast-items.css" rel="stylesheet">
             <p class="my-4" id="dynamic-content">Loading...</p>
-            <p><a class="btn btn-primary btn-lg" href="#" role="button">Answer</a><img style="max-width: 50%; height: auto; float:right;" src="./images/Intelligent_Elephant.png" />
+            <p><a class="btn btn-primary btn-lg" href="#" role="button" id="primaryButton" onClick="loadNextItem()">Practice</a><img style="max-width: 50%; height: auto; float:right;" src="./images/Intelligent_Elephant.png" />
 </p>
             <div style="visibility: hidden;"><a class="btn btn-primary btn-lg" href="#" role="button">Hint</a></div>
             <div style="visibility: hidden;"><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></div>
@@ -64,8 +64,33 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
         $(document).ready(function() {
-            $("#dynamic-content").load("./items/data-visualization-0000000000.html");
+            $("#dynamic-content").html("Let's practice data literacy!");
         });
+        var items = ["./items/data-visualization-0000000000.html","./items/data-visualization-0000000000.html","./items/data-visualization-0000000000.html","./items/data-visualization-0000000000.html","./items/data-visualization-0000000000.html"];
+        var currentItemIndex = 0;
+        function loadNextItem() {
+            currentItem++;
+            if (currentItemIndex<items.length-1) {
+                // Load item metadata
+                primaryButton.onClick = "evaluateAnswer()";
+                $("#dynamic-content").load(items[currentItemIndex]);
+                $("#primaryButton").html("Answer");
+            } else {
+                currentItemIndex = 0; 
+                // Add loading a new random or data informed items set
+                primaryButton.onClick = "loadNextItem()";
+                $("#dynamic-content").html("Let's practice data literacy!"]);
+                $("#primaryButton").html("Practice");
+            }
+        }
+        function evaluateAnswer() {
+            // Check for correctness
+            
+            // Update feedback
+
+            // Wait for continue
+            loadNextItem();
+        }
     </script>
 </body>
 </html>
