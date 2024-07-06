@@ -94,6 +94,7 @@
             var correct = false;
             console.log("In evaluate.");
             console.log($("#itemspec").data("correctvalue")); // The correct value
+            console.log($("#itemspec").data("type"));
             switch($("#itemspec").data("type")) {
                 case "multiple-choice": 
                     $("#fast-item").children('.fast-radio-container').each(function() 
