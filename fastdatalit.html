@@ -73,14 +73,14 @@
             if (currentItemIndex<items.length-1) {
                 console.log(currentItemIndex);
                 // Load item metadata
-                $("#primaryButton").click(evaluateAnswer);
+                $("#primaryButton").on("click", evaluateAnswer);
                 $("#dynamic-content").load(items[currentItemIndex]);
                 $("#primaryButton").html("Answer");
             } else {
                 console.log(currentItemIndex);
                 console.log("main page");
                 // Go back to main page.
-                $("#primaryButton").click(loadNextItem);
+                $("#primaryButton").on("click", loadNextItem);
                 $("#dynamic-content").html("Let's practice data literacy!");
                 $("#primaryButton").html("Practice");
                 currentItemIndex = 0;    // REPLACE -- Add loading a new random or data informed items set
@@ -92,7 +92,7 @@
             
             // Update feedback
             var feedback = "Let's try another one. " + currentItemIndex;
-            $("#feedback").html();
+            $("#feedback").html(feedback);
             // If incorrect have the learner try again
 
             // If correct set up then next item & Wait for continue
