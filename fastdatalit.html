@@ -77,7 +77,6 @@
                 var progressStyle = " " + (currentItemIndex+1)/items.length*100 + "%";
                 $("#progress-bar").css('width', progressStyle); //Update progress bar
                 console.log(progressStyle);
-                // Load item metadata
                 $("#primaryButton").off("click").on("click", evaluateAnswer);
                 $("#dynamic-content").load(items[currentItemIndex]);
                 $("#primaryButton").html("Answer");
@@ -85,7 +84,6 @@
                 console.log(currentItemIndex);
                 console.log("main page");
                 $("#progress-bar").css('width', "0%"); //Update progress bar
-                // Go back to main page.
                 $("#primaryButton").off("click").on("click", loadNextItem);
                 $("#dynamic-content").html("Let's practice data literacy!");
                 $("#primaryButton").html("Practice");
@@ -95,27 +93,30 @@
         function evaluateAnswer() {
             var correct = false;
             console.log("In evaluate.");
-            // Check for correctness
             console.log($("#itemspec").data("correctvalue")); // The correct value
-            // Get answer for the selected item
-            $("#fast-item").children('.fast-radio-container').each(function() 
-            { 
-                $(this).children('input').each(function() 
-                {
-                    if ($(this).prop('checked')) {
-                        if ($(this).data('answered') === $("#itemspec").data("correctvalue")) {
-                            correct=true;
-                            console.log($(this).data('answered'));
-                        }
-                    }
-                    console.log($(this).prop('checked')); 
-                    //console.log($(this).data('answered'));
-                    
-                });
-            }); 
-            // Update feedback
+            switch($("#itemspec").data("type")) {
+                case "multiple-choice": 
+                    $("#fast-item").children('.fast-radio-container').each(function() 
+                    { 
+                        $(this).children('input').each(function() 
+                        {
+                            if ($(this).prop('checked')) {
+                                if ($(this).data('answered') === $("#itemspec").data("correctvalue")) {
+                                    correct=true;
+                                    console.log($(this).data('answered'));
+                                }
+                            }
+                        });
+                    }); 
+                case "open-response":
+                    if ($("#fast-item").children('input').value === $("#itemspec").data("correctvalue")) {
+                        correct=true;
+                        console.log($("#fast-item").children('input').value);
+                    };
+                default:
+                    console.log("ERROR: Could not compare input to itemspec correctvalue.");
+            }
             var feedback = "";
-
             if (correct===true) {
                 feedback="Right! ";
                 currentItemIndex++;
