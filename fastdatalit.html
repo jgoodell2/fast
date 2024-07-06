@@ -71,7 +71,7 @@
         function loadNextItem() {
             if (currentItemIndex<items.length-1) {
                 // Load item metadata
-                $("#primaryButton").click = "evaluateAnswer()";
+                $("#primaryButton").click = "evaluateAnswer();";
                 $("#dynamic-content").load(items[currentItemIndex]);
                 $("#primaryButton").html("Answer");
             } else {
@@ -83,6 +83,7 @@
             }
         }
         function evaluateAnswer() {
+            console.log("In evaluate.");
             // Check for correctness
             
             // Update feedback
