@@ -95,27 +95,26 @@
             console.log("In evaluate.");
             console.log($("#itemspec").data("correctvalue")); // The correct value
             console.log($("#itemspec").data("type"));
-            switch($("#itemspec").data("type")) {
-                case "multiple-choice": 
-                    $("#fast-item").children('.fast-radio-container').each(function() 
-                    { 
-                        $(this).children('input').each(function() 
-                        {
-                            if ($(this).prop('checked')) {
-                                if ($(this).data('answered') === $("#itemspec").data("correctvalue")) {
-                                    correct=true;
-                                    console.log($(this).data('answered'));
-                                }
+            if ($("#itemspec").data("type") === "multiple-choice") { 
+                $("#fast-item").children('.fast-radio-container').each(function() 
+                { 
+                    $(this).children('input').each(function() 
+                    {
+                        if ($(this).prop('checked')) {
+                            if ($(this).data('answered') === $("#itemspec").data("correctvalue")) {
+                                correct=true;
+                                console.log($(this).data('answered'));
                             }
-                        });
-                    }); 
-                case "open-response":
-                    if ($("#fast-item").children('input').value === $("#itemspec").data("correctvalue")) {
-                        correct=true;
-                        console.log($("#fast-item").children('input').value);
-                    };
-                default:
-                    console.log("ERROR: Could not compare input to itemspec correctvalue.");
+                        }
+                    });
+                }); 
+            } else if ($("#itemspec").data("type") === "open-response") {
+                if ($("#fast-item").children('input').value === $("#itemspec").data("correctvalue")) {
+                    correct=true;
+                    console.log($("#fast-item").children('input').value);
+                };
+            } else {
+                console.log("ERROR: Could not compare input to itemspec correctvalue.");
             }
             var feedback = "";
             if (correct===true) {
