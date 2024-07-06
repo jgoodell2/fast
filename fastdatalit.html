@@ -100,7 +100,10 @@
             // the "#container" div having class as "uname" 
             $("#fast-item").children('.fast-radio-container').each(function() 
             { 
-                console.log($(this).$("input").prop('checked')); 
+                $(this).children('input').each(function() 
+                {
+                    console.log($(this).prop('checked')); 
+                });
             }); 
             // Update feedback
             var feedback = "Let's try another one.";
