@@ -102,8 +102,10 @@
                 $(this).children('input').each(function() 
                 {
                     if ($(this).prop('checked')) {
-                        if ($(this).prop('answered') == $("#itemspec").data("correctvalue")) {correct=true;}
-                        console.log($(this).prop('answered'));
+                        if ($(this).prop('answered') == $("#itemspec").data("correctvalue")) {
+                            correct=true;
+                            console.log($(this).prop('answered'));
+                        }
                     }
                     console.log($(this).prop('checked')); 
                 });
