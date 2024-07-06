@@ -129,5 +129,73 @@
             $("#primaryButton").off("click").on("click", loadNextItem);
         }
     </script>
+    
+    <!-- GDPR Consent -->
+    <div class="cookie-consent" id="cookieConsent">
+        <p>This application uses necessary cookies and your learning experinces to support your learning accross practice sessions. No personaly identifyable information is collected. By accepting, you consent to this necesary data use.</p>
+        <button class="accept-btn" onclick="acceptCookies()">Accept</button>
+    </div>
+    <style>
+        .cookie-consent {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+        .cookie-consent button {
+            margin: 10px;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+        .accept-btn {
+            background-color: #4CAF50;
+            color: white;
+        }
+    </style>
+    <script>
+        function getCookie(name) {
+            let value = "; " + document.cookie;
+            let parts = value.split("; " + name + "=");
+            if (parts.length == 2) return parts.pop().split(";").shift();
+        }
+
+        function setCookie(name, value, days) {
+            let expires = "";
+            if (days) {
+                let date = new Date();
+                date.setTime(date.getTime() + (days*24*60*60*1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+        }
+
+        function generateUUID() {
+            return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+                let r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+                return v.toString(16);
+            });
+        }
+
+        function acceptCookies() {
+            let uuid = generateUUID();
+            setCookie('userConsent', uuid, 365);
+            document.getElementById('cookieConsent').style.display = 'none';
+        }
+
+        window.onload = function() {
+            let userConsent = getCookie('userConsent');
+            if (!userConsent) {
+                document.getElementById('cookieConsent').style.display = 'block';
+            }
+        }
+    </script>
 </body>
 </html>
