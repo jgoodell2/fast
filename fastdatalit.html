@@ -94,7 +94,7 @@
         function evaluateAnswer() {
             console.log("In evaluate.");
             // Check for correctness
-            console.log($("#primaryButton").attr("correctvalue"));
+            console.log($("#primaryButton").prop("correctvalue"));
             // Update feedback
             var feedback = "Let's try another one.";
             $("#feedback").html(feedback);
