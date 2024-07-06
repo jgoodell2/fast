@@ -69,6 +69,7 @@
         var items = ["./items/data-visualization-0000000000.html","./items/data-visualization-0000000000.html","./items/data-visualization-0000000000.html","./items/data-visualization-0000000000.html","./items/data-visualization-0000000000.html"];
         var currentItemIndex = 0;
         function loadNextItem() {
+            console.log("In loadNextItem.");
             if (currentItemIndex<items.length-1) {
                 // Load item metadata
                 $("#primaryButton").click = "evaluateAnswer();";
