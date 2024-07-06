@@ -48,7 +48,7 @@
         <div class="jumbotron">
             <link href="./css/fast-items.css" rel="stylesheet">
             <p class="my-4" id="dynamic-content">Loading...</p>
-            <p><a class="btn btn-primary btn-lg" href="#" role="button" id="primaryButton" onClick="loadNextItem()">Practice</a><img style="max-width: 50%; height: auto; float:right;" src="./images/Intelligent_Elephant.png" />
+            <p><a class="btn btn-primary btn-lg" href="#" role="button" id="primaryButton">Practice</a><img style="max-width: 50%; height: auto; float:right;" src="./images/Intelligent_Elephant.png" />
 </p>
             <div style="visibility: hidden;"><a class="btn btn-primary btn-lg" href="#" role="button">Hint</a></div>
             <div style="visibility: hidden;"><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></div>
@@ -65,6 +65,7 @@
     <script>
         $(document).ready(function() {
             $("#dynamic-content").html("Let's practice data literacy!");
+            $("#primaryButton").on("click", loadNextItem);
         });
         var items = ["./items/data-visualization-0000000000.html","./items/data-visualization-0000000000.html","./items/data-visualization-0000000000.html","./items/data-visualization-0000000000.html","./items/data-visualization-0000000000.html"];
         var currentItemIndex = 0;
