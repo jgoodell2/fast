@@ -71,7 +71,7 @@
         var currentItemIndex = 0;
         function loadNextItem() {
             console.log("In loadNextItem.");
-            if (currentItemIndex<items.length-1) {
+            if (currentItemIndex<items.length) {
                 console.log(currentItemIndex);
                 var progressStyle = " " + (currentItemIndex+1)/items.length*100 + "%";
                 $("#progress-bar").css('width', progressStyle); //Update progress bar
