@@ -71,13 +71,13 @@
         function loadNextItem() {
             if (currentItemIndex<items.length-1) {
                 // Load item metadata
-                primaryButton.onClick = "evaluateAnswer()";
+                $("#primaryButton").click = "evaluateAnswer()";
                 $("#dynamic-content").load(items[currentItemIndex]);
                 $("#primaryButton").html("Answer");
             } else {
                 currentItemIndex = 0; 
                 // Add loading a new random or data informed items set
-                primaryButton.onClick = "loadNextItem()";
+                $("#primaryButton").click = "loadNextItem()";
                 $("#dynamic-content").html("Let's practice data literacy!");
                 $("#primaryButton").html("Practice");
             }
