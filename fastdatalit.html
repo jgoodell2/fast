@@ -128,8 +128,10 @@
                 feedback="<b>Right! </b>";
                 currentItemIndex++;
                 $("#primaryButton").html("Continue");
+                playAudioFeedback("correct");
             } else {
                 $("#primaryButton").html("Try Again");
+                playAudioFeedback("incorrect");
             }
             feedback+=$("#itemspec").data("feedback");
             $("#feedback").html(feedback);
