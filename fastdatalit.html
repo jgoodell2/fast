@@ -220,6 +220,24 @@
             audio.src = filePath;
             audio.play();
         }
+        function toggleMute() {
+            // run on page load
+            var audio = document.getElementById('audio');
+            var muteButton = document.getElementById("muteButton");
+            if (audio.muted) {
+                muteButton.src="images/unmuted.png";
+                audio.muted=false;
+            } else {
+                muteButton.src="images/muted.png";
+                audio.muted=true;
+            }
+            audio.play(); // audio will load and then play
+            var userAgent = window.navigator.userAgent;
+            if (userAgent.includes("Safari") && !(userAgent.includes("Chrome"))) {
+                var alertText = `Audio feedback not supported on Safari and iOS browsers. Use Chrome on Mac. Your user agent is: ${userAgent}`;
+                alert(alertText);
+            }
+        }
     </script>
 </body>
 </html>
