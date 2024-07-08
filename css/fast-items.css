@@ -1,4 +1,13 @@
 /* fast-items.css */
+
+/* General controls */
+#muteButton {
+    width: 40px;
+	height: 40px;
+	opacity: 0.5;
+	margin-left: 12px;
+	float:right;
+}
 /* Multiple choice item with custom radio button */
   /* Stem */
   .fast-item-stem {
