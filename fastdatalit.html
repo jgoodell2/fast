@@ -12,6 +12,7 @@
             bottom: 0;
             width: 100%;
             background-color: #f8f9fa;
+            line-height: 100%;
             text-align: center;
             padding: 10px;
             box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
@@ -79,7 +80,7 @@
         var currentItemIndex = 0;
         function loadNextItem() {
             console.log("In loadNextItem.");
-            $("#feedback").style("background-color: white");
+            $("#feedback").css("background-color", "#f8f9fa");
             $("#feedback").html("");
             if (currentItemIndex<items.length) {
                 console.log(currentItemIndex);
@@ -135,7 +136,7 @@
                 $("#primaryButton").html("Try Again");
                 playAudioFeedback("incorrect");
             }
-            $("#feedback").style("background-color: yellow");
+            $("#feedback").css("background-color", "yellow");
             feedback+=$("#itemspec").data("feedback");
             $("#feedback").html(feedback);
             $("#primaryButton").off("click").on("click", loadNextItem);
