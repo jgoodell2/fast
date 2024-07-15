@@ -80,7 +80,7 @@
         var currentItemIndex = 0;
         function loadNextItem() {
             console.log("In loadNextItem.");
-            $("#feedback").css("background-color", "#f8f9fa");
+            $(".status-bar").css("background-color", "#f8f9fa");
             $("#feedback").html("");
             if (currentItemIndex<items.length) {
                 console.log(currentItemIndex);
@@ -126,7 +126,8 @@
             } else {
                 console.log("ERROR: Could not compare input to itemspec correctvalue.");
             }
-            var feedback = "Try Again. ";
+            var feedback = "<b>Try Again. </b>";
+            var continuelink = "<a onClick='$("#primaryButton").trigger("click");'>Continue.</a>";
             if (correct===true) {
                 feedback="<b>Right! </b>";
                 currentItemIndex++;
@@ -136,10 +137,10 @@
                 $("#primaryButton").html("Try Again");
                 playAudioFeedback("incorrect");
             }
-            $("#feedback").css("background-color", "yellow");
-            feedback+=$("#itemspec").data("feedback");
-            $("#feedback").html(feedback);
+            $(".status-bar").css("background-color", "yellow");
             $("#primaryButton").off("click").on("click", loadNextItem);
+            feedback+=$("#itemspec").data("feedback")+continuelink;
+            $("#feedback").html(feedback);
         }
     </script>
     
