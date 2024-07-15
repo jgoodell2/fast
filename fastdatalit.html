@@ -128,7 +128,7 @@
             }
             var feedback = "";
             if (correct===true) {
-                feedback+="<b>Right! </b>"+$("#itemspec").data("feedback")+"<a id='continueLink'>Continue.</a>";
+                feedback+="<b>Right! </b>"+$("#itemspec").data("feedback")+"<a id='continueLink'> Continue.</a>";
                 currentItemIndex++;
                 $("#primaryButton").html("Continue");
                 playAudioFeedback("correct");
@@ -137,10 +137,10 @@
                 $("#primaryButton").html("Try Again");
                 playAudioFeedback("incorrect");
             }
+            $("#feedback").html(feedback);
             $(".status-bar").css("background-color", "yellow");
             $("#primaryButton").off("click").on("click", loadNextItem);
             $("#continueLink").off("click").on("click", loadNextItem);
-            $("#feedback").html(feedback);
         }
     </script>
     
