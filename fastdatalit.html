@@ -64,7 +64,7 @@
     </div>
 
     <div class="status-bar">
-        <p id="feedback">Status: All systems operational</p>
+        <p id="feedback"></p>
     </div>
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -79,6 +79,7 @@
         var currentItemIndex = 0;
         function loadNextItem() {
             console.log("In loadNextItem.");
+            $("#feedback").style("background-color: white");
             $("#feedback").html("");
             if (currentItemIndex<items.length) {
                 console.log(currentItemIndex);
@@ -134,6 +135,7 @@
                 $("#primaryButton").html("Try Again");
                 playAudioFeedback("incorrect");
             }
+            $("#feedback").style("background-color: yellow");
             feedback+=$("#itemspec").data("feedback");
             $("#feedback").html(feedback);
             $("#primaryButton").off("click").on("click", loadNextItem);
