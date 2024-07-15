@@ -126,20 +126,20 @@
             } else {
                 console.log("ERROR: Could not compare input to itemspec correctvalue.");
             }
-            var feedback = "<b>Try Again. </b>";
-            var continuelink = "<a onClick='$("#primaryButton").trigger("click");'>Continue.</a>";
+            var feedback = "";
             if (correct===true) {
-                feedback="<b>Right! </b>";
+                feedback+="<b>Right! </b>"+$("#itemspec").data("feedback")+"<a id='continueLink'>Continue.</a>";
                 currentItemIndex++;
                 $("#primaryButton").html("Continue");
                 playAudioFeedback("correct");
             } else {
+                feedback+="<a id='continueLink'><b>Try Again. </b></a>"+$("#itemspec").data("feedback");
                 $("#primaryButton").html("Try Again");
                 playAudioFeedback("incorrect");
             }
             $(".status-bar").css("background-color", "yellow");
             $("#primaryButton").off("click").on("click", loadNextItem);
-            feedback+=$("#itemspec").data("feedback")+continuelink;
+            $("#continueLink").off("click").on("click", loadNextItem);
             $("#feedback").html(feedback);
         }
     </script>
