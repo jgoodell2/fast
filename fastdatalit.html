@@ -128,7 +128,7 @@
             }
             var feedback = "";
             if (correct===true) {
-                feedback+="<b>Right! </b>"+$("#itemspec").data("feedback")+"<u><a id='continueLink'> Continue.</a></u>";
+                feedback+="<b>Right! </b>"+$("#itemspec").data("feedback")+"<a id='continueLink'><u> Continue.</u></a>";
                 currentItemIndex++;
                 $("#primaryButton").html("Continue");
                 playAudioFeedback("correct");
