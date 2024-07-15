@@ -128,12 +128,12 @@
             }
             var feedback = "";
             if (correct===true) {
-                feedback+="<b>Right! </b>"+$("#itemspec").data("feedback")+"<a id='continueLink'> Continue.</a>";
+                feedback+="<b>Right! </b>"+$("#itemspec").data("feedback")+"<u><a id='continueLink'> Continue.</a></u>";
                 currentItemIndex++;
                 $("#primaryButton").html("Continue");
                 playAudioFeedback("correct");
             } else {
-                feedback+="<a id='continueLink'><b>Try Again. </b></a>"+$("#itemspec").data("feedback");
+                feedback+="<a id='continueLink'><u><b>Try Again. </b></u></a>"+$("#itemspec").data("feedback");
                 $("#primaryButton").html("Try Again");
                 playAudioFeedback("incorrect");
             }
