@@ -18,6 +18,12 @@
             margin: 0.3em;
             border-radius: 0.0em;
         }
+        .button-group {
+            margin-top: 20px;
+        }
+        .button-group .btn {
+            margin-right: 10px;
+        }
     </style>
 </head>
 <body>
@@ -26,10 +32,11 @@
         <p id="description"></p>
         <div id="additional-properties"></div><br/>
         <ul id="children"></ul>
-        <a id="parent" href="#" class="btn btn-primary" style="display: none;">Go to Parent</a><br/>
-        <a id="framework" href="#" class="btn btn-primary" style="display: none;">Go to Framework</a>
+        <div class="button-group">
+            <a id="parent" href="#" class="btn btn-primary" style="display: none;">Go to Parent</a>
+            <a id="framework" href="#" class="btn btn-primary" style="display: none;">Go to Framework</a>
+        </div>
 
-        
         <div class="accordion mt-4" id="accordionExample">
             <div class="card">
                 <div class="card-header" id="headingOne">
@@ -85,7 +92,7 @@
                 codeTag.textContent = `Code: ${nodeData['ceasn:codedNotation']}`;
                 additionalProperties.appendChild(codeTag);
             }
-            
+
             if (nodeData['ceasn:competencyCategory']) {
                 const categoryTag = document.createElement('span');
                 categoryTag.className = 'tag';
@@ -117,8 +124,14 @@
                 parentButton.style.display = 'none';
             }
 
-            document.getElementById('framework').href = nodeData['ceasn:hasCompetencyFramework'];
-            document.getElementById('framework').style.display = 'block';
+            const frameworkButton = document.getElementById('framework');
+            if (nodeData['hasCompetencyFramework']) {
+                frameworkButton.style.display = 'block';
+                frameworkButton.href = `?id=${nodeData['hasCompetencyFramework']}`;
+            } else {
+                frameworkButton.style.display = 'none';
+            }
+
             document.getElementById('json-ld-source').textContent = JSON.stringify(nodeData, null, 2);
         }
 
@@ -129,5 +142,8 @@
             displayNode(graphData["@graph"], nodeId);
         };
     </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
