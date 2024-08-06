@@ -9,6 +9,14 @@
         body {
             padding: 20px;
         }
+        .tag {
+            display: inline-block;
+            background-color: #007bff;
+            color: white;
+            padding: 0.5em;
+            margin: 0.2em;
+            border-radius: 0.25em;
+        }
     </style>
 </head>
 <body>
@@ -50,16 +58,18 @@
             const additionalProperties = document.getElementById('additional-properties');
             additionalProperties.innerHTML = '';
 
-            if (nodeData['ceasn:competencyText']) {
-                const textDiv = document.createElement('div');
-                textDiv.textContent = `Code: ${nodeData['ceasn:codedNotation'].en}`;
-                additionalProperties.appendChild(textDiv);
-            }
-
             if (nodeData['ceasn:competencyCategory']) {
-                const categoryDiv = document.createElement('div');
-                categoryDiv.textContent = `Category: ${nodeData['ceasn:competencyCategory']}`;
-                additionalProperties.appendChild(categoryDiv);
+                const codeTag = document.createElement('span');
+                codeTag.className = 'tag';
+                codeTag.textContent = `Code: ${nodeData['ceasn:codeNotation']}`;
+                additionalProperties.appendChild(codeTag);
+            }
+            
+            if (nodeData['ceasn:competencyCategory']) {
+                const categoryTag = document.createElement('span');
+                categoryTag.className = 'tag';
+                categoryTag.textContent = `Category: ${nodeData['ceasn:competencyCategory']}`;
+                additionalProperties.appendChild(categoryTag);
             }
 
             const children = nodeData['ceasn:hasTopChild'] || nodeData['ceasn:hasChild'] || [];
