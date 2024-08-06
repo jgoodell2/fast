@@ -27,6 +27,7 @@
         <div id="additional-properties"></div><br/>
         <ul id="children"></ul>
         <a id="parent" href="#" class="btn btn-primary" style="display: none;">Go to Parent</a>
+        <a id="framework" href="#" class="btn btn-primary" style="display: none;">Go to Framework</a>
     </div>
 
     <script>
@@ -96,6 +97,8 @@
             } else {
                 parentButton.style.display = 'none';
             }
+
+            document.getElementById('framework').href = nodeData['ceasn:hasFramework']?.en || '#';
         }
 
         window.onload = async function() {
