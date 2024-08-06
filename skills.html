@@ -44,7 +44,22 @@
             if (!nodeData) return;
 
             document.getElementById('title').textContent = nodeData['ceasn:name']?.en || nodeData['ceasn:competencyText']?.en || 'Unknown';
-            document.getElementById('description').textContent = nodeData['ceasn:description']?.en || '';
+            document.getElementById('description').textContent = nodeData['ceasn:description']?.en || nodeData['ceasn:competencyText']?.en || '';
+
+            const additionalProperties = document.getElementById('additional-properties');
+            additionalProperties.innerHTML = '';
+
+            if (nodeData['ceasn:competencyText']) {
+                const textDiv = document.createElement('div');
+                textDiv.textContent = `Code: ${nodeData['ceasn:codedNotation'].en}`;
+                additionalProperties.appendChild(textDiv);
+            }
+
+            if (nodeData['ceasn:competencyCategory']) {
+                const categoryDiv = document.createElement('div');
+                categoryDiv.textContent = `Category: ${nodeData['ceasn:competencyCategory']}`;
+                additionalProperties.appendChild(categoryDiv);
+            }
 
             const children = nodeData['ceasn:hasTopChild'] || nodeData['ceasn:hasChild'] || [];
             const childrenList = document.getElementById('children');
