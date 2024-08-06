@@ -98,8 +98,8 @@
                 parentButton.style.display = 'none';
             }
 
-            document.getElementById('framework').href = nodeData['ceasn:hasFramework']?.en || '#';
-            if (nodeData['ceasn:hasFramework']) document.getElementById('framework').style.display = 'block';
+            document.getElementById('framework').href = nodeData['ceasn:hasFramework']? || '#';
+            document.getElementById('framework').style.display = 'block';
         }
 
         window.onload = async function() {
