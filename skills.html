@@ -11,11 +11,11 @@
         }
         .tag {
             display: inline-block;
-            background-color: #007bff;
+            background-color: #7b7b7b;
             color: white;
             padding: 0.5em;
-            margin: 0.2em;
-            border-radius: 0.25em;
+            margin: 0.1em;
+            border-radius: 0.0em;
         }
     </style>
 </head>
@@ -58,10 +58,10 @@
             const additionalProperties = document.getElementById('additional-properties');
             additionalProperties.innerHTML = '';
 
-            if (nodeData['ceasn:competencyCategory']) {
+            if (nodeData['ceasn:codedNotation']) {
                 const codeTag = document.createElement('span');
                 codeTag.className = 'tag';
-                codeTag.textContent = `Code: ${nodeData['ceasn:codeNotation']}`;
+                codeTag.textContent = `Code: ${nodeData['ceasn:codedNotation']}`;
                 additionalProperties.appendChild(codeTag);
             }
             
