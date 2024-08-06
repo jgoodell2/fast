@@ -20,163 +20,37 @@
     </div>
 
     <script>
-        const data = {
-            "@context": {
-                "ceasn": "https://purl.org/ctdlasn/vocabs/schema#",
-                "schema": "http://schema.org/",
-                "skos": "http://www.w3.org/2004/02/skos/core#",
-                "ceterms": "https://purl.org/ctdl/terms/"
-            },
-            "@graph": [
-                {
-                    "@type": "ceasn:CompetencyFramework",
-                    "@id": "https://fast.qi-partners.com/cf/data-literacy",
-                    "ceasn:name": { "en": "Data Literacy Competency Framework" },
-                    "ceasn:description": { "en": "A framework outlining key competencies in data literacy." },
-                    "ceasn:dateModified": "2024-07-01",
-                    "ceasn:hasTopChild": [
-                        "https://fast.qi-partners.com/cd/understanding-data-fundamentals",
-                        "https://fast.qi-partners.com/cd/data-collection-sources"
-                    ],
-                    "ceasn:ctid": "ff51016e-c344-e395-5d88-d788a881fd44",
-                    "ceasn:ownedBy": "ce-55145765-01e2-4efd-9fc3-2fcdc6d2030d"
-                },
-                {
-                    "@type": "ceasn:Competency",
-                    "@id": "https://fast.qi-partners.com/cd/understanding-data-fundamentals",
-                    "ceasn:competencyText": { "en": "Understanding Data Fundamentals" },
-                    "ceasn:competencyCategory": "Skill",
-                    "ceasn:codedNotation": "1",
-                    "ceasn:hasChild": [
-                        "https://fast.qi-partners.com/cd/define-data-concepts-terminology",
-                        "https://fast.qi-partners.com/cd/describe-data-types-uses"
-                    ],
-                    "ceasn:ctid": "f2cdac95-c5fe-c9f0-e4eb-4cad39e46c2f",
-                    "ceasn:ownedBy": "ce-55145765-01e2-4efd-9fc3-2fcdc6d2030d",
-                    "hasCompetencyFramework": "https://fast.qi-partners.com/cf/data-literacy"
-                },
-                {
-                    "@type": "ceasn:Competency",
-                    "@id": "https://fast.qi-partners.com/cd/define-data-concepts-terminology",
-                    "ceasn:competencyText": { "en": "Define key data concepts and terminology (e.g., datasets, variables, metadata)." },
-                    "ceasn:competencyCategory": "Skill",
-                    "ceasn:codedNotation": "1.1",
-                    "ceasn:hasChild": [
-                        "https://fast.qi-partners.com/cd/assessment-task/define-data-concepts-terminology-variable"
-                    ],
-                    "ceasn:ctid": "dd02bcf6-fcb5-4391-2fec-ceb697fc3dca",
-                    "ceasn:ownedBy": "ce-55145765-01e2-4efd-9fc3-2fcdc6d2030d",
-                    "hasCompetencyFramework": "https://fast.qi-partners.com/cf/data-literacy"
-                },
-                {
-                    "@type": "ceasn:Competency",
-                    "@id": "https://fast.qi-partners.com/cd/assessment-task/define-data-concepts-terminology-variable",
-                    "ceasn:competencyText": { "en": "Correctly match the term 'variable' to its definition in different contexts, such as data analysis and mathematics." },
-                    "ceasn:competencyCategory": "Assessment Task",
-                    "ceasn:codedNotation": "1.1.1",
-                    "ceasn:ctid": "a05ae0c9-876c-bbf9-4c5a-4a1118edf7f9",
-                    "ceasn:ownedBy": "ce-55145765-01e2-4efd-9fc3-2fcdc6d2030d",
-                    "hasCompetencyFramework": "https://fast.qi-partners.com/cf/data-literacy"
-                },
-                {
-                    "@type": "ceasn:Competency",
-                    "@id": "https://fast.qi-partners.com/cd/describe-data-types-uses",
-                    "ceasn:competencyText": { "en": "Describe different types of data (e.g., quantitative, qualitative) and their uses." },
-                    "ceasn:competencyCategory": "Skill",
-                    "ceasn:codedNotation": "1.2",
-                    "ceasn:hasChild": [
-                        "https://fast.qi-partners.com/cd/assessment-task/describe-data-types-uses"
-                    ],
-                    "ceasn:ctid": "7fde2a16-bc6b-8248-eed1-14cb425e8e57",
-                    "ceasn:ownedBy": "ce-55145765-01e2-4efd-9fc3-2fcdc6d2030d",
-                    "hasCompetencyFramework": "https://fast.qi-partners.com/cf/data-literacy"
-                },
-                {
-                    "@type": "ceasn:Competency",
-                    "@id": "https://fast.qi-partners.com/cd/assessment-task/describe-data-types-uses",
-                    "ceasn:competencyText": { "en": "Classify given data examples as quantitative or qualitative." },
-                    "ceasn:competencyCategory": "Assessment Task",
-                    "ceasn:codedNotation": "1.2.1",
-                    "ceasn:ctid": "0adc9408-25ac-cafb-07a6-6d39fe92aabe",
-                    "ceasn:ownedBy": "ce-55145765-01e2-4efd-9fc3-2fcdc6d2030d",
-                    "hasCompetencyFramework": "https://fast.qi-partners.com/cf/data-literacy"
-                },
-                {
-                    "@type": "ceasn:Competency",
-                    "@id": "https://fast.qi-partners.com/cd/data-collection-sources",
-                    "ceasn:competencyText": { "en": "Data Collection and Sources" },
-                    "ceasn:competencyCategory": "Skill",
-                    "ceasn:codedNotation": "2",
-                    "ceasn:hasChild": [
-                        "https://fast.qi-partners.com/cd/identify-data-sources",
-                        "https://fast.qi-partners.com/cd/assess-data-source-credibility"
-                    ],
-                    "ceasn:ctid": "b9dba720-d18f-4cae-d7b4-8007dc26bae9",
-                    "ceasn:ownedBy": "ce-55145765-01e2-4efd-9fc3-2fcdc6d2030d",
-                    "hasCompetencyFramework": "https://fast.qi-partners.com/cf/data-literacy"
-                },
-                {
-                    "@type": "ceasn:Competency",
-                    "@id": "https://fast.qi-partners.com/cd/identify-data-sources",
-                    "ceasn:competencyText": { "en": "Identify various sources of data (e.g., surveys, experiments, databases)." },
-                    "ceasn:competencyCategory": "Skill",
-                    "ceasn:codedNotation": "2.1",
-                    "ceasn:hasChild": [
-                        "https://fast.qi-partners.com/cd/assessment-task/identify-data-sources"
-                    ],
-                    "ceasn:ctid": "cdbcec63-d9ba-1805-2455-55e26605db60",
-                    "ceasn:ownedBy": "ce-55145765-01e2-4efd-9fc3-2fcdc6d2030d",
-                    "hasCompetencyFramework": "https://fast.qi-partners.com/cf/data-literacy"
-                },
-                {
-                    "@type": "ceasn:Competency",
-                    "@id": "https://fast.qi-partners.com/cd/assessment-task/identify-data-sources",
-                    "ceasn:competencyText": { "en": "List and describe methods for collecting data from surveys and experiments." },
-                    "ceasn:competencyCategory": "Assessment Task",
-                    "ceasn:codedNotation": "2.1.1",
-                    "ceasn:ctid": "74b52747-5020-0e22-e017-3a6d6ab52fa2",
-                    "ceasn:ownedBy": "ce-55145765-01e2-4efd-9fc3-2fcdc6d2030d",
-                    "hasCompetencyFramework": "https://fast.qi-partners.com/cf/data-literacy"
-                },
-                {
-                    "@type": "ceasn:Competency",
-                    "@id": "https://fast.qi-partners.com/cd/assess-data-source-credibility",
-                    "ceasn:competencyText": { "en": "Assess the credibility and reliability of data sources." },
-                    "ceasn:competencyCategory": "Skill",
-                    "ceasn:codedNotation": "2.2",
-                    "ceasn:hasChild": [
-                        "https://fast.qi-partners.com/cd/assessment-task/assess-data-source-credibility"
-                    ],
-                    "ceasn:ctid": "1807124e-63f1-0041-77fb-6bc269b56eae",
-                    "ceasn:ownedBy": "ce-55145765-01e2-4efd-9fc3-2fcdc6d2030d",
-                    "hasCompetencyFramework": "https://fast.qi-partners.com/cf/data-literacy"
-                },
-                {
-                    "@type": "ceasn:Competency",
-                    "@id": "https://fast.qi-partners.com/cd/assessment-task/assess-data-source-credibility",
-                    "ceasn:competencyText": { "en": "Evaluate a given data source for credibility based on authorship, publication, and methodology." },
-                    "ceasn:competencyCategory": "Assessment Task",
-                    "ceasn:codedNotation": "2.2.1",
-                    "ceasn:ctid": "aeaba711-1816-9f29-ad87-c935249f9cce",
-                    "ceasn:ownedBy": "ce-55145765-01e2-4efd-9fc3-2fcdc6d2030d",
-                    "hasCompetencyFramework": "https://fast.qi-partners.com/cf/data-literacy"
+        async function fetchData() {
+            const response = await fetch('framework.jsonld');
+            return await response.json();
+        }
+
+        function findNodeById(graph, id) {
+            return graph.find(node => node["@id"] === id);
+        }
+
+        function findParentNode(graph, nodeId) {
+            for (let node of graph) {
+                if (node['ceasn:hasChild']?.includes(nodeId) || node['ceasn:hasTopChild']?.includes(nodeId)) {
+                    return node;
                 }
-            ]
-        };
+            }
+            return null;
+        }
 
-        const urlParams = new URLSearchParams(window.location.search);
-        const nodeId = urlParams.get('id') || 'https://fast.qi-partners.com/cf/data-literacy';
-        const nodeData = data["@graph"].find(node => node["@id"] === nodeId);
+        function displayNode(graph, nodeId) {
+            const nodeData = findNodeById(graph, nodeId);
 
-        function displayNode(node) {
-            document.getElementById('title').textContent = node['ceasn:name']?.en || node['ceasn:competencyText']?.en || 'Unknown';
-            document.getElementById('description').textContent = node['ceasn:description']?.en || '';
+            if (!nodeData) return;
 
-            const children = node['ceasn:hasTopChild'] || node['ceasn:hasChild'] || [];
+            document.getElementById('title').textContent = nodeData['ceasn:name']?.en || nodeData['ceasn:competencyText']?.en || 'Unknown';
+            document.getElementById('description').textContent = nodeData['ceasn:description']?.en || '';
+
+            const children = nodeData['ceasn:hasTopChild'] || nodeData['ceasn:hasChild'] || [];
             const childrenList = document.getElementById('children');
             childrenList.innerHTML = '';
             children.forEach(childId => {
-                const childNode = data["@graph"].find(child => child["@id"] === childId);
+                const childNode = findNodeById(graph, childId);
                 if (childNode) {
                     const li = document.createElement('li');
                     const a = document.createElement('a');
@@ -187,17 +61,22 @@
                 }
             });
 
-            const parentId = node['hasCompetencyFramework'];
+            const parentNode = findParentNode(graph, nodeId);
             const parentButton = document.getElementById('parent');
-            if (parentId) {
+            if (parentNode) {
                 parentButton.style.display = 'block';
-                parentButton.href = `?id=${parentId}`;
+                parentButton.href = `?id=${parentNode["@id"]}`;
             } else {
                 parentButton.style.display = 'none';
             }
         }
 
-        displayNode(nodeData);
+        window.onload = async function() {
+            const graphData = await fetchData();
+            const urlParams = new URLSearchParams(window.location.search);
+            const nodeId = urlParams.get('id') || 'https://fast.qi-partners.com/cf/data-literacy';
+            displayNode(graphData["@graph"], nodeId);
+        };
     </script>
 </body>
 </html>
